@@ -2,175 +2,84 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EG1 储能巡检网关 - ASM-AI 爱思摩科技</title>
-<meta name="description" content="ASM-AI EG1 工商业储能柜远程巡检网关，Modbus RTU只读采集，4G MQTT上报，DIN导轨安装">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>EG1 储能远程巡检网关 | ASM-AI 爱思摩科技</title>
+<meta name="description" content="ASM-AI EG1 储能远程巡检网关。工商业储能柜Modbus只读采集，SOC/功率/温度4G实时上报。适用：工商业储能 · 光储充电站 · 代维公司。4G即装即用，合规对接。电话0755-2774 2413">
+<link rel="canonical" href="https://www.asm-ai.com/products/eg1.html">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#ffffff;--bg2:#f4f7fb;--text:#1a2332;--text2:#536580;--text3:#8c9bb5;--blue:#1a56db;--blue-d:#0f3a94;--cyan:#0891b2;--accent-g:linear-gradient(135deg,#1a56db,#0891b2);--red:#dc2626;--green:#16a34a;--border:#e2e8f0;--shadow:0 1px 3px rgba(0,0,0,.06);--shadow-md:0 4px 16px rgba(0,0,0,.08);--font:'DM Sans','Noto Sans SC',sans-serif}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}img{max-width:100%;display:block}a{color:inherit;text-decoration:none}
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}.nav.scrolled{box-shadow:var(--shadow-md)}.nav-inner{max-width:1280px;margin:0 auto;padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between}.logo{display:flex;align-items:center;gap:10px}.logo-mark{width:34px;height:34px;background:var(--accent-g);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:11px}.logo-text{font-size:18px;font-weight:800;color:var(--blue-d)}.logo-sub{font-size:10px;color:var(--text3);margin-left:4px}
-.nav-links{display:flex;gap:20px;align-items:center}.nav-links>a{color:var(--text2);font-size:13.5px;font-weight:500}.nav-links>a:hover{color:var(--blue)}.nav-cta{padding:8px 20px;background:var(--accent-g);color:#fff;border-radius:8px;font-weight:700;font-size:12.5px;box-shadow:0 2px 8px rgba(26,86,219,.25)}
-.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:8px}.hamburger span{display:block;width:20px;height:2px;background:var(--text)}
-@media(max-width:900px){.nav-links{display:none}.hamburger{display:flex}}
-.hero-product{padding:100px 32px 60px;background:linear-gradient(180deg,var(--bg2),#fff)}.hero-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:40px;align-items:center}@media(min-width:768px){.hero-inner{grid-template-columns:1fr 1fr}}
-.breadcrumb{font-size:12px;color:var(--text3);margin-bottom:20px}.breadcrumb a{color:var(--blue);font-weight:500}
-.hero-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}.htag{font-size:10px;padding:4px 10px;border-radius:5px;font-weight:700}.htag-m{background:rgba(26,86,219,.08);color:var(--blue);border:1px solid rgba(26,86,219,.12)}.htag-ip{background:rgba(8,145,178,.06);color:var(--cyan);border:1px solid rgba(8,145,178,.12)}.htag-new{background:rgba(22,163,74,.08);color:var(--green);border:1px solid rgba(22,163,74,.12)}
-.hero-product h1{font-size:clamp(28px,3.5vw,42px);font-weight:800;letter-spacing:-1px;margin-bottom:12px;line-height:1.2}
-.hero-product .subtitle{font-size:16px;color:var(--text2);margin-bottom:24px;line-height:1.7;max-width:480px}
-.hero-features{display:flex;flex-direction:column;gap:8px;margin-bottom:28px}.hf{font-size:13.5px;color:var(--text2)}.hf::before{content:'✓ ';color:var(--blue);font-weight:700}
-.btn{padding:12px 26px;border-radius:10px;font-weight:700;font-size:13.5px;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:6px;transition:all .3s}.btn-primary{background:var(--accent-g);color:#fff;box-shadow:0 4px 14px rgba(26,86,219,.3)}.btn-primary:hover{opacity:.9;transform:translateY(-1px)}.btn-outline{background:#fff;border:1.5px solid var(--border);color:var(--text)}.btn-outline:hover{border-color:var(--blue);color:var(--blue)}
-.hero-img{display:flex;align-items:center;justify-content:center}.hero-img img{max-height:380px;object-fit:contain;filter:drop-shadow(0 16px 40px rgba(0,0,0,.12))}
-section{padding:72px 32px}.sec-inner{max-width:1280px;margin:0 auto}.sec-title{font-size:clamp(22px,2.5vw,30px);font-weight:800;margin-bottom:28px;letter-spacing:-.5px}.bg-alt{background:var(--bg2)}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:16px}
-.gallery-item{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);transition:all .3s}
-.gallery-item:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
-.gallery-item img{width:100%;height:280px;object-fit:contain;padding:16px;background:var(--bg2)}
-.gallery-label{padding:12px 16px;font-size:13px;font-weight:600;color:var(--text2);text-align:center;border-top:1px solid var(--border)}
-.spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
-.spec-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:24px;box-shadow:var(--shadow)}.spec-card h4{font-size:14px;font-weight:700;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);color:var(--blue)}
-.spec-row{display:flex;justify-content:space-between;padding:6px 0;font-size:12.5px;border-bottom:1px solid rgba(0,0,0,.03)}.spec-label{color:var(--text3);font-weight:500}.spec-val{color:var(--text);font-weight:600;text-align:right;max-width:55%}
-.scene-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-.scene-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:24px;box-shadow:var(--shadow)}.scene-card h4{font-size:14px;font-weight:700;margin-bottom:8px}.scene-card p{font-size:12.5px;color:var(--text2);line-height:1.6}.scene-icon{font-size:28px;margin-bottom:12px}
-.cta-bar{background:var(--bg2);border-radius:16px;padding:40px;text-align:center;margin-top:40px}.cta-bar h3{font-size:22px;font-weight:800;margin-bottom:8px}.cta-bar p{font-size:14px;color:var(--text2);margin-bottom:20px}.cta-bar .methods{font-size:13px;color:var(--text3);margin-top:16px}
-footer{border-top:1px solid var(--border);padding:32px;background:var(--bg2);text-align:center}.footer-inner{font-size:11px;color:var(--text3)}
-@media(max-width:640px){section{padding:48px 20px}.hero-product{padding:90px 20px 48px}.spec-grid{grid-template-columns:1fr}.scene-grid{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}}
+:root{--n900:#0b1220;--n700:#1b2b42;--n500:#3a5068;--n400:#5a7390;--n300:#8da0b5;--n100:#dde4eb;--n50:#f0f3f6;--n25:#f7f9fb;--white:#fff;--blue:#1855d5;--blue-l:#4b7ff7;--teal:#0c8f8f;--teal-l:#10b5a8;--red:#c0392b;--green:#1a8a4a;--amber:#d97b06;--font:'Outfit','Noto Sans SC',system-ui,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font);background:var(--n25);color:var(--n900);line-height:1.65}img{max-width:100%;display:block}a{color:inherit;text-decoration:none}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);box-shadow:0 2px 6px rgba(11,18,32,.07)}.nav-inner{max-width:1300px;margin:0 auto;padding:0 36px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px}.logo-icon{width:34px;height:34px;background:linear-gradient(135deg,var(--blue),var(--teal));border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:10.5px}.logo-t{font-size:17px;font-weight:800}.logo-s{font-size:9px;color:var(--n400);margin-left:3px}
+.nav-links{display:flex;gap:20px;align-items:center}.nav-links>a{font-size:13px;font-weight:500;color:var(--n500)}.nav-links>a:hover{color:var(--blue)}.nav-cta{padding:8px 20px;background:linear-gradient(135deg,var(--blue),var(--teal));color:#fff;border-radius:8px;font-weight:700;font-size:12px}
+.burger{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:6px}.burger span{width:20px;height:1.8px;background:var(--n900)}@media(max-width:900px){.nav-links{display:none}.burger{display:flex}}
+section{padding:72px 36px}.mx{max-width:1300px;margin:0 auto}.bg-w{background:var(--white)}.se{font-size:11px;font-weight:700;color:var(--blue);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:8px}.st{font-size:clamp(22px,2.8vw,32px);font-weight:900;letter-spacing:-1px;margin-bottom:20px;line-height:1.15}
+.ph{padding:96px 36px 56px;background:linear-gradient(180deg,var(--n50),var(--n25))}.ph-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:40px;align-items:center}@media(min-width:768px){.ph-inner{grid-template-columns:1.1fr .9fr}}
+.bc{font-size:12px;color:var(--n300);margin-bottom:18px}.bc a{color:var(--blue);font-weight:500}
+.ph-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px}.pht{font-size:9.5px;padding:3.5px 9px;border-radius:4px;font-weight:700;background:rgba(24,85,213,.06);color:var(--blue)}
+.ph h1{font-size:clamp(26px,3.5vw,40px);font-weight:900;letter-spacing:-1.5px;margin-bottom:10px;line-height:1.1}
+.ph-val{font-size:15px;color:var(--n400);line-height:1.75;margin-bottom:8px;max-width:500px}
+.ph-scene{font-size:12px;color:var(--teal);font-weight:600;margin-bottom:20px}
+.ph-btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.btn{padding:11px 24px;border-radius:10px;font-weight:700;font-size:13px;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:6px;transition:.3s}
+.btn-p{background:linear-gradient(135deg,var(--blue),var(--teal));color:#fff;box-shadow:0 3px 12px rgba(24,85,213,.25)}.btn-p:hover{transform:translateY(-1px)}
+.btn-o{background:var(--white);border:1px solid var(--n100);color:var(--n500)}.btn-o:hover{border-color:var(--blue);color:var(--blue)}
+.btn-g{background:rgba(26,138,74,.08);color:var(--green);border:1px solid rgba(26,138,74,.15)}
+.ph-img{display:flex;justify-content:center}.ph-img img{max-height:360px;object-fit:contain;filter:drop-shadow(0 16px 40px rgba(0,0,0,.1))}
+.del-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}.del{background:var(--white);border:1px solid var(--n100);border-radius:10px;padding:20px;text-align:center}.del-ic{font-size:22px;margin-bottom:6px}.del-t{font-size:13px;font-weight:700;margin-bottom:3px}.del-v{font-size:11.5px;color:var(--n400)}
+.cta-box{background:var(--n900);border-radius:16px;padding:48px;margin-top:32px;text-align:center;position:relative;overflow:hidden}.cta-box::before{content:'';position:absolute;top:-40%;right:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(12,143,143,.1),transparent 65%)}.cta-box h3{font-size:24px;font-weight:900;color:#fff;margin-bottom:8px;position:relative}.cta-box p{font-size:14px;color:rgba(255,255,255,.5);margin-bottom:24px;position:relative}.cta-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;position:relative}.cta-contact{margin-top:18px;font-size:12.5px;color:rgba(255,255,255,.35);position:relative}
+footer{background:var(--n900);padding:28px 36px;text-align:center}.ft-t{font-size:11px;color:rgba(255,255,255,.3)}.ft-t a{color:rgba(255,255,255,.5)}
+@media(max-width:640px){section{padding:48px 20px}.ph{padding:80px 20px 40px}.del-grid{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
-<nav class="nav" id="nav"><div class="nav-inner">
-<a href="../index.html" class="logo"><div class="logo-mark">ASM</div><span class="logo-text">ASM-AI</span><span class="logo-sub">爱思摩科技</span></a>
-<div class="nav-links">
-<a href="../index.html#products">产品</a>
-<a href="../index.html#solutions">解决方案</a>
-<a href="../index.html#trust">资质交付</a>
-<a href="../index.html#contact" class="nav-cta">获取方案</a>
-</div>
-<div class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')"><span></span><span></span><span></span></div>
-<div class="mobile-menu" style="display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:#fff;padding:20px 24px;z-index:999">
-<a href="../index.html#products" style="display:block;padding:12px 0;border-bottom:1px solid #e2e8f0">全部产品</a>
-<a href="../index.html#solutions" style="display:block;padding:12px 0;border-bottom:1px solid #e2e8f0">解决方案</a>
-<a href="../index.html#contact" style="display:block;padding:12px 0;border-bottom:1px solid #e2e8f0">获取方案</a>
-<div style="padding:14px 0;color:#1a56db;font-weight:700">0755-2774 2413</div>
-</div>
+<nav class="nav"><div class="nav-inner">
+<a href="../index.html" class="logo"><div class="logo-icon">ASM</div><span class="logo-t">ASM-AI</span><span class="logo-s">爱思摩科技</span></a>
+<div class="nav-links"><a href="../index.html#industries">行业方案</a><a href="../index.html#products">产品</a><a href="../index.html#trust">资质交付</a><a href="../index.html#contact" class="nav-cta">获取报价</a></div>
+<div class="burger" onclick="this.nextElementSibling.classList.toggle('open')"><span></span><span></span><span></span></div>
+<div style="display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:#fff;padding:20px 24px;z-index:99"><a href="../index.html#products" style="display:block;padding:12px 0;border-bottom:1px solid #dde4eb">全部产品</a><a href="../index.html#contact" style="display:block;padding:12px 0;border-bottom:1px solid #dde4eb">获取方案</a><div style="padding:14px 0;color:#1855d5;font-weight:700">0755-2774 2413</div></div>
 </div></nav>
 
-<section class="hero-product"><div class="hero-inner">
-<div>
-<div class="breadcrumb"><a href="../index.html">首页</a> / <a href="../index.html#products">产品</a> / EG1</div>
-<div class="hero-tags"><span class="htag htag-m">EG1</span><span class="htag htag-ip">DIN导轨</span><span class="htag htag-new">NEW</span></div>
+<section class="ph"><div class="ph-inner"><div>
+<div class="bc"><a href="../index.html">首页</a> / <a href="../index.html#products">产品</a> / EG1</div>
+<div class="ph-tags"><span class="pht pht-m">EG1</span><span class="pht pht-m">DIN导轨</span><span class="pht pht-m">双路RS485</span><span class="pht pht-m">Modbus RTU</span><span class="pht pht-m">NEW</span></div>
 <h1>储能远程巡检网关</h1>
-<p class="subtitle">工商业储能柜Modbus RTU只读采集，4G MQTT上报，让代维公司在办公室就能看到每个站点的SOC、功率、温度和告警</p>
-<div class="hero-features">
-<div class="hf">双路光耦隔离RS485，独立接BMS和PCS</div>
-<div class="hf">Modbus RTU只读采集，不写入任何寄存器</div>
-<div class="hf">SOC+功率+温度+告警11个核心字段</div>
-<div class="hf">4G Cat.1 MQTT上报，微信告警推送</div>
-<div class="hf">DIN导轨安装，10分钟接线开机</div>
-<div class="hf">12V DC取柜内电源，无需额外供电</div>
-</div>
-<div style="display:flex;gap:12px;flex-wrap:wrap">
-<a href="../index.html#contact" class="btn btn-primary">获取报价</a>
-<a href="../index.html#contact" class="btn btn-outline">申请样机试用</a>
+<p class="ph-val">工商业储能柜Modbus只读采集，SOC/功率/温度4G实时上报</p>
+<div class="ph-scene">适用：工商业储能 · 光储充电站 · 代维公司</div>
+<div class="ph-btns">
+<a href="../index.html#contact" class="btn btn-p">获取报价 →</a>
+<a href="../index.html#contact" class="btn btn-o">申请样机试用</a>
+<a href="../index.html#contact" class="btn btn-g">📄 获取规格书</a>
 </div>
 </div>
-<div class="hero-img"><img src="../images/EG1.png" alt="EG1 储能巡检网关"></div>
+<div class="ph-img"><img src="../images/EG1.png" alt="EG1 储能远程巡检网关"></div>
 </div></section>
 
-<!-- PRODUCT GALLERY -->
-<section class="bg-alt"><div class="sec-inner">
-<div class="sec-title">产品图集</div>
-<div class="gallery">
-<div class="gallery-item"><img src="../images/EG1.png" alt="EG1 外观渲染图"><div class="gallery-label">📐 产品外观</div></div>
-<div class="gallery-item"><img src="../images/EG1-views.png" alt="EG1 六视图"><div class="gallery-label">🔍 六面视图</div></div>
-<div class="gallery-item"><img src="../images/EG1-exploded.png" alt="EG1 拆解图"><div class="gallery-label">🔧 内部拆解</div></div>
-<div class="gallery-item"><img src="../images/EG1-scene.png" alt="EG1 安装实景"><div class="gallery-label">🏭 安装实景</div></div>
+<section class="bg-w"><div class="mx"><div class="se">Delivery & Service</div><div class="st">交付与服务</div>
+<div class="del-grid">
+<div class="del"><div class="del-ic">🚀</div><div class="del-t">样机交付</div><div class="del-v">2周</div></div>
+<div class="del"><div class="del-ic">📦</div><div class="del-t">小批量交付</div><div class="del-v">3~4周</div></div>
+<div class="del"><div class="del-ic">🛡</div><div class="del-t">质保期</div><div class="del-v">36个月</div></div>
+<div class="del"><div class="del-ic">🔄</div><div class="del-t">OTA升级</div><div class="del-v">终身免费</div></div>
+<div class="del"><div class="del-ic">💬</div><div class="del-t">技术支持</div><div class="del-v">工作日在线</div></div>
+<div class="del"><div class="del-ic">⚙</div><div class="del-t">OEM/ODM</div><div class="del-v">50台起订</div></div>
+</div></div></section>
+
+<section><div class="mx">
+<div class="cta-box">
+<h3>对 EG1 储能远程巡检网关 感兴趣？</h3>
+<p>联系我们获取详细技术方案、项目报价和样机试用</p>
+<div class="cta-btns">
+<a href="../index.html#contact" class="btn btn-p">获取方案报价 →</a>
+<a href="tel:18002504814" class="btn btn-o" style="color:#fff;border-color:rgba(255,255,255,.2)">📞 贾先生 18002504814</a>
+<a href="../index.html#contact" class="btn btn-o" style="color:#fff;border-color:rgba(255,255,255,.2)">📄 获取对接文档</a>
 </div>
-</div></section>
-
-<!-- SPECS -->
-<section><div class="sec-inner">
-<div class="sec-title">技术规格</div>
-<div class="spec-grid">
-
-<div class="spec-card"><h4>主控 / MCU</h4>
-<div class="spec-row"><span class="spec-label">芯片</span><span class="spec-val">ESP32-S3-WROOM-1-N16R8</span></div>
-<div class="spec-row"><span class="spec-label">主频</span><span class="spec-val">双核 240MHz</span></div>
-<div class="spec-row"><span class="spec-label">Flash/PSRAM</span><span class="spec-val">16MB / 8MB</span></div>
-<div class="spec-row"><span class="spec-label">开发框架</span><span class="spec-val">ESP-IDF</span></div>
-<div class="spec-row"><span class="spec-label">OTA升级</span><span class="spec-val">支持远程固件升级</span></div>
-</div>
-
-<div class="spec-card"><h4>RS485接口 / Serial</h4>
-<div class="spec-row"><span class="spec-label">通道数</span><span class="spec-val">2路独立RS485</span></div>
-<div class="spec-row"><span class="spec-label">隔离方式</span><span class="spec-val">光耦隔离（每路独立）</span></div>
-<div class="spec-row"><span class="spec-label">收发器</span><span class="spec-val">SP3485 / MAX3485</span></div>
-<div class="spec-row"><span class="spec-label">协议</span><span class="spec-val">Modbus RTU（只读）</span></div>
-<div class="spec-row"><span class="spec-label">波特率</span><span class="spec-val">9600 / 19200（可配置）</span></div>
-<div class="spec-row"><span class="spec-label">端子</span><span class="spec-val">3.81mm插拔式端子排</span></div>
-</div>
-
-<div class="spec-card"><h4>采集字段 / Data</h4>
-<div class="spec-row"><span class="spec-label">BMS数据</span><span class="spec-val">SOC / 总电压 / 总电流</span></div>
-<div class="spec-row"><span class="spec-label">BMS温度</span><span class="spec-val">最高/最低单体温度</span></div>
-<div class="spec-row"><span class="spec-label">BMS告警</span><span class="spec-val">过压/欠压/过温/通信异常</span></div>
-<div class="spec-row"><span class="spec-label">PCS数据</span><span class="spec-val">有功功率 / 运行状态</span></div>
-<div class="spec-row"><span class="spec-label">PCS告警</span><span class="spec-val">故障码 / 离网告警</span></div>
-<div class="spec-row"><span class="spec-label">采集周期</span><span class="spec-val">10s~60s（可配置）</span></div>
-</div>
-
-<div class="spec-card"><h4>通信 / Communication</h4>
-<div class="spec-row"><span class="spec-label">4G模组</span><span class="spec-val">Air724UG Cat.1</span></div>
-<div class="spec-row"><span class="spec-label">协议</span><span class="spec-val">MQTT → EMQX</span></div>
-<div class="spec-row"><span class="spec-label">数据存储</span><span class="spec-val">InfluxDB时序数据库</span></div>
-<div class="spec-row"><span class="spec-label">可视化</span><span class="spec-val">Grafana Dashboard</span></div>
-<div class="spec-row"><span class="spec-label">告警推送</span><span class="spec-val">微信公众号/小程序</span></div>
-<div class="spec-row"><span class="spec-label">SIM卡</span><span class="spec-val">Nano SIM 物联网卡</span></div>
-</div>
-
-<div class="spec-card"><h4>电源 / Power</h4>
-<div class="spec-row"><span class="spec-label">输入电压</span><span class="spec-val">12V DC（柜内辅助电源）</span></div>
-<div class="spec-row"><span class="spec-label">输入接口</span><span class="spec-val">5.08mm 2P端子排</span></div>
-<div class="spec-row"><span class="spec-label">内部降压</span><span class="spec-val">SY8088 Buck → 3.8V / 3.3V</span></div>
-<div class="spec-row"><span class="spec-label">典型功耗</span><span class="spec-val">≤2W</span></div>
-<div class="spec-row"><span class="spec-label">保护</span><span class="spec-val">TVS防浪涌 + 反接保护</span></div>
-</div>
-
-<div class="spec-card"><h4>结构 / Structure</h4>
-<div class="spec-row"><span class="spec-label">外壳</span><span class="spec-val">工业ABS阻燃壳体</span></div>
-<div class="spec-row"><span class="spec-label">安装</span><span class="spec-val">标准35mm DIN导轨卡扣</span></div>
-<div class="spec-row"><span class="spec-label">尺寸</span><span class="spec-val">≤100×70×40mm</span></div>
-<div class="spec-row"><span class="spec-label">天线</span><span class="spec-val">SMA吸盘4G天线</span></div>
-<div class="spec-row"><span class="spec-label">工作温度</span><span class="spec-val">-20℃ ~ +70℃</span></div>
-<div class="spec-row"><span class="spec-label">安装耗时</span><span class="spec-val">≤10分钟</span></div>
-</div>
-
+<div class="cta-contact">公司电话 0755-2774 2413 · 邮箱 contact@asm-ai.com · 深圳市南山区</div>
 </div>
 </div></section>
 
-<!-- SCENES -->
-<section class="bg-alt"><div class="sec-inner">
-<div class="sec-title">应用场景</div>
-<div class="scene-grid">
-<div class="scene-card"><div class="scene-icon">🔋</div><h4>工商业储能代维</h4><p>代维公司远程查看所有站点SOC、功率、温度，两次巡检之间不再有盲区，告警微信即时推送。</p></div>
-<div class="scene-card"><div class="scene-icon">🏭</div><h4>工业园区储能站</h4><p>园区内多台储能柜统一监控，Grafana大屏实时展示所有设备状态和告警。</p></div>
-<div class="scene-card"><div class="scene-icon">🏬</div><h4>商场/写字楼储能</h4><p>商业建筑配套储能系统的远程状态监测，物业无需专业人员即可掌握运行状态。</p></div>
-<div class="scene-card"><div class="scene-icon">⚡</div><h4>充电站储能</h4><p>光储充一体化充电站的储能设备远程巡检，降低运维差旅成本。</p></div>
-</div>
-
-<div class="cta-bar">
-<h3>对 EG1 储能巡检网关感兴趣？</h3>
-<p>联系我们获取详细技术方案和项目报价</p>
-<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-<a href="../index.html#contact" class="btn btn-primary">获取方案报价</a>
-<a href="tel:18002504814" class="btn btn-outline">📞 贾先生 18002504814</a>
-</div>
-<div class="methods">公司电话 0755-2774 2413 · 邮箱 William@asmoorvape.com</div>
-</div>
-</div></section>
-
-<footer><div class="footer-inner">© 2026 深圳市爱思摩科技有限公司 · <a href="https://www.asm-ai.com" style="color:#1a56db">www.asm-ai.com</a></div></footer>
-<script>window.addEventListener('scroll',function(){document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50)});document.querySelector('.hamburger').addEventListener('click',function(){var m=this.nextElementSibling;m.style.display=m.style.display==='block'?'none':'block'});</script>
+<footer><div class="ft-t">&copy; 2026 深圳市爱思摩科技有限公司 · <a href="https://www.asm-ai.com">www.asm-ai.com</a></div></footer>
+<script>document.querySelector('.burger').addEventListener('click',function(){var m=this.nextElementSibling;m.style.display=m.style.display==='block'?'none':'block'});</script>
 </body>
 </html>
