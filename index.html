@@ -3,309 +3,514 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ASM-AI 爱思摩科技 — 工业级智能监测终端</title>
-<meta name="description" content="ASM-AI 爱思摩科技提供工业级4G智能监测终端，覆盖消防水压、特种设备、水利水务等9大行业。电话：0755-2774 2413">
+<title>ASM-AI 爱思摩科技 | 工业级4G智能监测终端 · 即装即用 · 合规对接</title>
+<meta name="description" content="ASM-AI为政府监管、公用事业、系统集成商提供工业级4G物联网监测终端。覆盖消防水压、储能巡检、AI安全监护等11大行业。深圳研发，即装即用，合规对接监管平台。">
+<meta name="keywords" content="工业物联网,智能监测终端,4G远程监测,消防水压监测,储能巡检网关,AI安全监护,特种设备监测,水利监测,环保监测">
 <link rel="canonical" href="https://www.asm-ai.com/">
+<meta property="og:title" content="ASM-AI 爱思摩科技 | 工业级智能监测终端">
+<meta property="og:description" content="覆盖11大关键基础设施行业的4G即装即用物联网监测终端">
+<meta property="og:url" content="https://www.asm-ai.com/">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<!-- JSON-LD Organization -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"ASM-AI 爱思摩科技","legalName":"深圳市爱思摩科技有限公司","url":"https://www.asm-ai.com","logo":"https://www.asm-ai.com/images/logo.png","description":"工业级4G智能监测终端制造商，覆盖消防水压、储能巡检、AI安全监护等11大行业","address":{"@type":"PostalAddress","addressLocality":"深圳","addressRegion":"广东","addressCountry":"CN"},"contactPoint":{"@type":"ContactPoint","telephone":"+86-755-2774-2413","contactType":"sales","availableLanguage":["Chinese","English"]},"sameAs":[]}
+</script>
+<!-- JSON-LD FAQ -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ASM-AI的监测终端需要布网线或WiFi吗？","acceptedAnswer":{"@type":"Answer","text":"不需要。全系列产品内置4G Cat.1模组，插入SIM卡即可联网，支持全国三大运营商，无需布线布网。"}},{"@type":"Question","name":"数据能对接政府监管平台吗？","acceptedAnswer":{"@type":"Answer","text":"可以。内置HJ 212、SL 651、GB 14287、Modbus RTU等行业标准协议，可直接对接各级政府监管平台，无需二次开发。"}},{"@type":"Question","name":"最小订购量是多少？","acceptedAnswer":{"@type":"Answer","text":"标准产品MOQ 5-50台不等，样机评估可单台购买。OEM定制50台起订，样机2周交付。"}},{"@type":"Question","name":"安装需要专业人员吗？","acceptedAnswer":{"@type":"Answer","text":"大部分产品支持免工具安装（磁吸/壁挂/DIN导轨/扎带），单点部署10-30分钟，普通技术人员即可完成。"}},{"@type":"Question","name":"是否支持OEM/ODM定制？","acceptedAnswer":{"@type":"Answer","text":"支持。统一ESP32-S3/RK3568平台可快速定制不同传感器组合和通信协议，50台起订，样机2-4周交付。"}}]}
+</script>
+
 <style>
-:root{--bg:#ffffff;--bg2:#f4f7fb;--bg3:#eaf0f8;--card:#ffffff;--card-hover:#f8fafd;--text:#1a2332;--text2:#536580;--text3:#8c9bb5;--blue:#1a56db;--blue-d:#0f3a94;--blue-l:#3b82f6;--cyan:#0891b2;--accent:#1a56db;--accent-g:linear-gradient(135deg,#1a56db,#0891b2);--red:#dc2626;--orange:#ea580c;--green:#16a34a;--border:#e2e8f0;--border-h:rgba(26,86,219,.25);--shadow:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);--shadow-md:0 4px 16px rgba(0,0,0,.08);--shadow-lg:0 12px 40px rgba(0,0,0,.1);--radius:12px;--font:'DM Sans','Noto Sans SC',sans-serif}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}::selection{background:rgba(26,86,219,.15)}img{max-width:100%;display:block}a{color:inherit;text-decoration:none}
+:root{
+  --navy:#0c1b33;--navy-l:#162d50;--steel:#1a56db;--steel-l:#3b82f6;
+  --teal:#0891b2;--teal-l:#06d6a0;
+  --bg:#f8fafb;--white:#ffffff;
+  --text:#1a2332;--text2:#4a5e78;--text3:#8494a7;
+  --border:#dfe6ee;--border-l:#edf1f5;
+  --red:#dc2626;--green:#16a34a;--orange:#ea580c;
+  --accent-g:linear-gradient(135deg,#1a56db 0%,#0891b2 100%);
+  --shadow-sm:0 1px 2px rgba(12,27,51,.04);
+  --shadow:0 2px 8px rgba(12,27,51,.06);
+  --shadow-md:0 8px 24px rgba(12,27,51,.08);
+  --shadow-lg:0 16px 48px rgba(12,27,51,.12);
+  --radius:14px;
+  --font:'Outfit','Noto Sans SC',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+::selection{background:rgba(26,86,219,.15)}
+img{max-width:100%;display:block}a{color:inherit;text-decoration:none}
 
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:box-shadow .3s}.nav.scrolled{box-shadow:var(--shadow-md)}.nav-inner{max-width:1280px;margin:0 auto;padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between}.logo{display:flex;align-items:center;gap:10px}.logo-mark{width:34px;height:34px;background:var(--accent-g);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:11px;letter-spacing:.5px;flex-shrink:0}.logo-text{font-size:18px;font-weight:800;color:var(--blue-d)}.logo-sub{font-size:10px;color:var(--text3);margin-left:4px}
-.nav-links{display:flex;gap:20px;align-items:center}.nav-links>a{color:var(--text2);font-size:13.5px;font-weight:500;transition:color .3s}.nav-links>a:hover{color:var(--blue)}
-.nav-phone{color:var(--text2);font-size:12px;display:none;align-items:center;gap:4px}.nav-phone span{color:var(--blue);font-weight:700;font-size:13px}
-.nav-cta{padding:8px 20px;background:var(--accent-g);color:#fff;border-radius:8px;font-weight:700;font-size:12.5px;white-space:nowrap;box-shadow:0 2px 8px rgba(26,86,219,.25)}.nav-cta:hover{opacity:.88}
-.lang-btn{padding:4px 10px;border:1px solid var(--border);border-radius:6px;font-size:11px;font-weight:600;color:var(--blue);background:rgba(26,86,219,.04);cursor:pointer;white-space:nowrap;transition:all .3s}.lang-btn:hover{border-color:var(--blue);background:rgba(26,86,219,.08)}
-.mega-trigger{position:relative;cursor:pointer;color:var(--text2);font-size:13.5px;font-weight:500;padding:8px 0}.mega-trigger::after{content:' ▾';font-size:9px;opacity:.4}
-.mega-panel{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--border);border-radius:14px;padding:20px;min-width:680px;box-shadow:var(--shadow-lg);z-index:100}.mega-trigger:hover .mega-panel{display:grid}.mega-panel.pm{grid-template-columns:1fr 1fr 1fr;gap:4px}.mega-panel.sm{grid-template-columns:1fr 1fr;gap:4px;min-width:460px}
-.mega-item{padding:10px 12px;border-radius:8px;transition:background .2s;display:block}.mega-item:hover{background:var(--bg2)}.mi-model{font-size:10px;color:var(--blue);font-weight:700;letter-spacing:.5px}.mi-name{font-size:12.5px;font-weight:600;margin-top:2px}.mi-desc{font-size:10px;color:var(--text3);margin-top:2px}
-.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:8px}.hamburger span{display:block;width:20px;height:2px;background:var(--text);border-radius:1px}
-.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:#fff;padding:20px 24px;z-index:999;overflow-y:auto}.mobile-menu.open{display:block}.mobile-menu a{display:block;padding:12px 0;color:var(--text2);font-size:14px;border-bottom:1px solid var(--border)}.mobile-menu .m-sec{font-size:11px;color:var(--blue);font-weight:600;letter-spacing:1px;padding:16px 0 4px;text-transform:uppercase}.mobile-menu .m-phone{padding:14px 0;color:var(--blue);font-size:15px;font-weight:700}
-@media(min-width:1024px){.nav-phone{display:flex}}@media(max-width:900px){.nav-links{display:none}.hamburger{display:flex}.mega-panel{display:none!important}}
+/* ===== NAV ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:all .4s}
+.nav-bg{background:rgba(255,255,255,0);backdrop-filter:blur(0)}
+.nav.scrolled .nav-bg{background:rgba(255,255,255,.95);backdrop-filter:blur(20px);box-shadow:var(--shadow)}
+.nav-inner{max-width:1320px;margin:0 auto;padding:0 40px;height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-mark{width:38px;height:38px;background:var(--accent-g);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:12px;letter-spacing:.5px}
+.logo-text{font-size:20px;font-weight:800;color:var(--navy)}.nav.at-top .logo-text{color:#fff}
+.logo-sub{font-size:10px;color:var(--text3);font-weight:500}.nav.at-top .logo-sub{color:rgba(255,255,255,.6)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links>a{font-size:14px;font-weight:500;color:var(--text2);transition:color .3s}
+.nav.at-top .nav-links>a{color:rgba(255,255,255,.8)}
+.nav-links>a:hover{color:var(--steel)}
+.nav-cta{padding:10px 24px;background:var(--accent-g);color:#fff;border-radius:10px;font-weight:700;font-size:13px;box-shadow:0 4px 12px rgba(26,86,219,.3);transition:all .3s;white-space:nowrap}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(26,86,219,.4)}
+.nav-phone{font-size:13px;color:var(--text2);display:none;align-items:center;gap:6px;font-weight:600}
+.nav.at-top .nav-phone{color:rgba(255,255,255,.8)}
+@media(min-width:1100px){.nav-phone{display:flex}}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:1px;transition:background .3s}
+.nav.at-top .hamburger span{background:#fff}
+.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;bottom:0;background:#fff;padding:24px;z-index:999;overflow-y:auto}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:14px 0;font-size:15px;font-weight:500;color:var(--text2);border-bottom:1px solid var(--border-l)}
+@media(max-width:960px){.nav-links{display:none}.hamburger{display:flex}}
 
-.hero{padding:130px 32px 80px;position:relative;overflow:hidden;background:linear-gradient(180deg,var(--bg2) 0%,#fff 100%)}.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(26,86,219,.06),transparent 70%);pointer-events:none}.hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(8,145,178,.05),transparent 70%);pointer-events:none}
-.hero-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:48px;align-items:center}@media(min-width:900px){.hero-inner{grid-template-columns:1fr 1fr}}
-.hero-label{display:inline-flex;align-items:center;gap:6px;padding:6px 16px;background:#fff;border:1px solid var(--border);border-radius:24px;font-size:12px;color:var(--blue);font-weight:500;margin-bottom:24px;box-shadow:var(--shadow)}.hero-label .dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-.hero h1{font-size:clamp(30px,4.5vw,52px);font-weight:800;letter-spacing:-1.5px;line-height:1.12;margin-bottom:20px}.hero h1 .gr{background:var(--accent-g);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero-desc{font-size:15.5px;color:var(--text2);line-height:1.8;margin-bottom:32px;max-width:480px}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
-.btn{padding:12px 26px;border-radius:10px;font-weight:700;font-size:13.5px;transition:all .3s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:6px}.btn-primary{background:var(--accent-g);color:#fff;box-shadow:0 4px 14px rgba(26,86,219,.3)}.btn-primary:hover{opacity:.9;transform:translateY(-1px)}.btn-outline{background:#fff;border:1.5px solid var(--border);color:var(--text)}.btn-outline:hover{border-color:var(--blue);color:var(--blue)}
-.hero-stats{display:flex;gap:36px;flex-wrap:wrap}.hero-stat-num{font-size:28px;font-weight:800;color:var(--blue)}.hero-stat-label{font-size:11px;color:var(--text3);margin-top:2px;font-weight:500}
-.hero-visual{display:flex;justify-content:center}.hero-visual img{max-height:360px;object-fit:contain;filter:drop-shadow(0 20px 40px rgba(0,0,0,.12))}
+/* ===== HERO ===== */
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;background:var(--navy);overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(12,27,51,.97),rgba(22,45,80,.85));z-index:1}
+.hero::after{content:'';position:absolute;top:-30%;right:-10%;width:800px;height:800px;background:radial-gradient(circle,rgba(8,145,178,.15),transparent 70%);z-index:1}
+.hero-grid-pattern{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px;z-index:1}
+.hero-inner{position:relative;z-index:2;max-width:1320px;margin:0 auto;padding:140px 40px 100px;display:grid;grid-template-columns:1fr;gap:60px;align-items:center}
+@media(min-width:960px){.hero-inner{grid-template-columns:1.1fr .9fr}}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 16px 6px 8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:28px;font-size:12px;color:rgba(255,255,255,.7);font-weight:500;margin-bottom:28px;backdrop-filter:blur(4px)}
+.hero-eyebrow .pulse{width:8px;height:8px;border-radius:50%;background:var(--teal-l);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(6,214,160,.4)}70%{box-shadow:0 0 0 8px rgba(6,214,160,0)}}
+.hero h1{font-size:clamp(32px,5vw,56px);font-weight:900;letter-spacing:-2px;line-height:1.08;color:#fff;margin-bottom:24px}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--teal-l),var(--steel-l));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-desc{font-size:17px;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:36px;max-width:520px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
+.btn{padding:14px 30px;border-radius:12px;font-weight:700;font-size:14px;transition:all .3s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:8px}
+.btn-primary{background:var(--accent-g);color:#fff;box-shadow:0 4px 16px rgba(26,86,219,.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,86,219,.4)}
+.btn-white{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(4px)}
+.btn-white:hover{background:rgba(255,255,255,.18)}
+.hero-trust{display:flex;gap:32px;flex-wrap:wrap}
+.hero-trust-item{display:flex;align-items:center;gap:8px}
+.hero-trust-num{font-size:24px;font-weight:900;color:#fff}
+.hero-trust-label{font-size:11px;color:rgba(255,255,255,.5);line-height:1.3}
+.hero-visual{display:flex;justify-content:center;position:relative}
+.hero-visual img{max-height:420px;object-fit:contain;filter:drop-shadow(0 24px 48px rgba(0,0,0,.3))}
 
-section{padding:80px 32px}.sec-inner{max-width:1280px;margin:0 auto}.sec-label{font-size:12px;color:var(--blue);font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}.sec-title{font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-.8px;margin-bottom:14px;line-height:1.2}.sec-desc{font-size:14.5px;color:var(--text2);max-width:540px;line-height:1.7;margin-bottom:44px}.bg-alt{background:var(--bg2)}
+/* ===== TRUST BAR ===== */
+.trust-bar{background:var(--white);border-bottom:1px solid var(--border-l);padding:20px 40px}
+.trust-bar-inner{max-width:1320px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
+.trust-badge{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text3);font-weight:500}
+.trust-badge strong{color:var(--text);font-weight:700}
 
-.audience-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}.audience-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:all .3s;cursor:pointer;position:relative;overflow:hidden;display:block;box-shadow:var(--shadow)}.audience-card:hover{border-color:var(--border-h);transform:translateY(-3px);box-shadow:var(--shadow-md)}.audience-card::after{content:'→';position:absolute;top:28px;right:24px;color:var(--text3);font-size:16px}.audience-card:hover::after{color:var(--blue)}.aud-icon{font-size:24px;margin-bottom:14px;width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:var(--bg2);border-radius:10px}.audience-card h4{font-size:15px;font-weight:700;margin-bottom:6px}.aud-types{font-size:12px;color:var(--blue);margin-bottom:8px;font-weight:500}.audience-card p{font-size:12.5px;color:var(--text2);line-height:1.6}
+/* ===== SECTIONS ===== */
+section{padding:100px 40px}
+.sec-inner{max-width:1320px;margin:0 auto}
+.sec-header{text-align:center;max-width:680px;margin:0 auto 60px}
+.sec-eyebrow{font-size:12px;font-weight:700;color:var(--steel);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
+.sec-title{font-size:clamp(28px,3.5vw,42px);font-weight:900;letter-spacing:-1.5px;line-height:1.15;margin-bottom:16px}
+.sec-desc{font-size:15px;color:var(--text2);line-height:1.8}
+.bg-white{background:var(--white)}
 
-.products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}.p-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .4s;box-shadow:var(--shadow)}.p-card:hover{border-color:var(--border-h);transform:translateY(-4px);box-shadow:var(--shadow-lg)}.p-img{height:220px;display:flex;align-items:center;justify-content:center;padding:16px;background:var(--bg2)}.p-img img{max-width:100%;max-height:100%;object-fit:contain;transition:transform .4s}.p-card:hover .p-img img{transform:scale(1.04)}.p-info{padding:18px 22px 22px}.p-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px}.ptag{font-size:9px;padding:3px 8px;border-radius:4px;font-weight:700}.ptag-m{background:rgba(26,86,219,.08);color:var(--blue);border:1px solid rgba(26,86,219,.12)}.ptag-ip{background:rgba(8,145,178,.06);color:var(--cyan);border:1px solid rgba(8,145,178,.12)}.ptag-ex{background:rgba(220,38,38,.06);color:var(--red);border:1px solid rgba(220,38,38,.1)}.ptag-new{background:rgba(22,163,74,.08);color:var(--green);border:1px solid rgba(22,163,74,.12)}.p-info h3{font-size:15.5px;font-weight:700;margin-bottom:6px}.p-value{font-size:12.5px;color:var(--text2);line-height:1.6;margin-bottom:12px}.p-features{display:flex;flex-direction:column;gap:4px;margin-bottom:14px}.p-feat{font-size:11.5px;color:var(--text2)}.p-feat::before{content:'✓ ';color:var(--blue);font-weight:700}.p-link{font-size:12.5px;color:var(--blue);font-weight:600;display:inline-flex;align-items:center;gap:4px;transition:gap .3s}.p-link:hover{gap:8px}
+/* ===== PAIN POINTS ===== */
+.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.pain-card{background:var(--white);border:1px solid var(--border-l);border-radius:var(--radius);padding:32px;position:relative;overflow:hidden;transition:all .3s}
+.pain-card:hover{border-color:var(--steel);box-shadow:var(--shadow-md);transform:translateY(-3px)}
+.pain-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent-g);opacity:0;transition:opacity .3s}
+.pain-card:hover::before{opacity:1}
+.pain-num{font-size:48px;font-weight:900;color:var(--border);line-height:1;margin-bottom:16px}
+.pain-card h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.pain-card p{font-size:13.5px;color:var(--text2);line-height:1.7}
+.pain-card .solution{margin-top:14px;padding-top:14px;border-top:1px solid var(--border-l);font-size:12.5px;color:var(--steel);font-weight:600;display:flex;align-items:center;gap:6px}
 
-.sol-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:28px}.sol-tab{padding:9px 18px;border-radius:8px;font-size:12.5px;font-weight:500;background:#fff;border:1px solid var(--border);cursor:pointer;color:var(--text2);transition:all .3s;box-shadow:var(--shadow)}.sol-tab.active,.sol-tab:hover{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 2px 8px rgba(26,86,219,.25)}.sol-content{display:none;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:36px;box-shadow:var(--shadow)}.sol-content.active{display:grid;grid-template-columns:1fr;gap:28px}@media(min-width:768px){.sol-content.active{grid-template-columns:1fr 1fr}}.sol-content h3{font-size:20px;font-weight:700;margin-bottom:14px}.sol-pain{margin-bottom:18px}.sol-pain h4{font-size:13px;font-weight:600;color:var(--red);margin-bottom:6px}.sol-pain p{font-size:13px;color:var(--text2);line-height:1.7}.sol-list{list-style:none}.sol-list li{font-size:12.5px;color:var(--text2);padding:5px 0 5px 18px;position:relative}.sol-list li::before{content:'';position:absolute;left:0;top:12px;width:7px;height:7px;border-radius:50%;background:var(--blue)}.sol-std{margin-top:14px;padding:10px 16px;background:rgba(26,86,219,.04);border-radius:8px;border-left:3px solid var(--blue)}.sol-std p{font-size:11.5px;color:var(--blue);font-weight:600}.sol-cta{margin-top:18px}
+/* ===== PRODUCTS ===== */
+.products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.p-card{background:var(--white);border:1px solid var(--border-l);border-radius:var(--radius);overflow:hidden;transition:all .4s}
+.p-card:hover{border-color:rgba(26,86,219,.2);transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.p-img{height:200px;display:flex;align-items:center;justify-content:center;padding:20px;background:linear-gradient(180deg,#f0f4f8,#f8fafb)}
+.p-img img{max-width:90%;max-height:100%;object-fit:contain;transition:transform .5s}
+.p-card:hover .p-img img{transform:scale(1.05)}
+.p-body{padding:20px 24px 24px}
+.p-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px}
+.ptag{font-size:9px;padding:3px 8px;border-radius:4px;font-weight:700;letter-spacing:.3px}
+.ptag-m{background:rgba(26,86,219,.06);color:var(--steel);border:1px solid rgba(26,86,219,.1)}
+.ptag-ip{background:rgba(8,145,178,.05);color:var(--teal);border:1px solid rgba(8,145,178,.1)}
+.ptag-ex{background:rgba(220,38,38,.05);color:var(--red);border:1px solid rgba(220,38,38,.08)}
+.ptag-new{background:rgba(22,163,74,.06);color:var(--green);border:1px solid rgba(22,163,74,.1)}
+.p-body h3{font-size:16px;font-weight:700;margin-bottom:6px}
+.p-desc{font-size:13px;color:var(--text2);margin-bottom:12px;line-height:1.6}
+.p-feats{display:flex;flex-direction:column;gap:4px;margin-bottom:16px}
+.p-feat{font-size:12px;color:var(--text2)}.p-feat::before{content:'✓ ';color:var(--steel);font-weight:700}
+.p-link{font-size:13px;color:var(--steel);font-weight:600;display:inline-flex;align-items:center;gap:4px}
+.p-link:hover{gap:8px}
 
-.cap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}.cap-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:all .3s;box-shadow:var(--shadow)}.cap-card:hover{border-color:var(--border-h);transform:translateY(-2px);box-shadow:var(--shadow-md)}.cap-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:16px;background:rgba(26,86,219,.06);color:var(--blue)}.cap-card h4{font-size:15px;font-weight:700;margin-bottom:8px}.cap-card p{font-size:12.5px;color:var(--text2);line-height:1.7}
+/* ===== SOLUTIONS ===== */
+.sol-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;justify-content:center}
+.sol-tab{padding:10px 20px;border-radius:10px;font-size:13px;font-weight:600;background:var(--white);border:1px solid var(--border);cursor:pointer;color:var(--text2);transition:all .3s}
+.sol-tab.active{background:var(--navy);border-color:var(--navy);color:#fff;box-shadow:0 4px 12px rgba(12,27,51,.2)}
+.sol-tab:hover:not(.active){border-color:var(--steel);color:var(--steel)}
+.sol-content{display:none;background:var(--white);border:1px solid var(--border-l);border-radius:var(--radius);padding:40px;box-shadow:var(--shadow)}
+.sol-content.active{display:grid;grid-template-columns:1fr;gap:32px}
+@media(min-width:768px){.sol-content.active{grid-template-columns:1fr 1fr}}
+.sol-content h3{font-size:22px;font-weight:800;margin-bottom:16px}
+.sol-pain{margin-bottom:20px;padding:16px;background:rgba(220,38,38,.03);border-radius:10px;border-left:3px solid var(--red)}
+.sol-pain h4{font-size:12px;font-weight:700;color:var(--red);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px}
+.sol-pain p{font-size:13.5px;color:var(--text2);line-height:1.7}
+.sol-list{list-style:none}.sol-list li{font-size:13px;color:var(--text2);padding:6px 0 6px 20px;position:relative}
+.sol-list li::before{content:'';position:absolute;left:0;top:13px;width:8px;height:8px;border-radius:50%;background:var(--steel)}
+.sol-std{margin-top:16px;padding:12px 18px;background:rgba(26,86,219,.03);border-radius:10px;border-left:3px solid var(--steel)}
+.sol-std p{font-size:12px;color:var(--steel);font-weight:600}
+.sol-cta{margin-top:20px}
 
-.badge-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:44px}.badge{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center;transition:all .3s;box-shadow:var(--shadow)}.badge:hover{border-color:var(--border-h);transform:translateY(-2px);box-shadow:var(--shadow-md)}.badge-icon{font-size:32px;margin-bottom:10px}.badge-name{font-size:13px;font-weight:700;margin-bottom:4px}.badge-desc{font-size:10.5px;color:var(--text3);line-height:1.4}
-.timeline{display:flex;align-items:flex-start;gap:0;margin-top:44px;overflow-x:auto;padding-bottom:8px}.tl-step{flex:1;min-width:160px;text-align:center;position:relative}.tl-step::before{content:'';position:absolute;top:20px;left:50%;right:-50%;height:2px;background:var(--border)}.tl-step:last-child::before{display:none}.tl-dot{width:40px;height:40px;border-radius:50%;background:rgba(26,86,219,.08);border:2px solid var(--blue);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;position:relative;z-index:1;font-size:15px;color:var(--blue);font-weight:700}.tl-title{font-size:12.5px;font-weight:700;margin-bottom:4px}.tl-desc{font-size:10.5px;color:var(--text3);line-height:1.4;padding:0 8px}
-.trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}.trust-col{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}.trust-col h4{font-size:15px;font-weight:700;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border)}.trust-item{font-size:12.5px;color:var(--text2);padding:5px 0;display:flex;align-items:baseline;gap:8px}.trust-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:4px}.trust-dot.blue{background:var(--blue)}.trust-dot.cyan{background:var(--cyan)}
+/* ===== CAPABILITIES ===== */
+.cap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.cap-card{background:var(--white);border:1px solid var(--border-l);border-radius:var(--radius);padding:32px;transition:all .3s}
+.cap-card:hover{border-color:rgba(26,86,219,.2);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.cap-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px;background:linear-gradient(135deg,rgba(26,86,219,.08),rgba(8,145,178,.06))}
+.cap-card h4{font-size:16px;font-weight:700;margin-bottom:8px}
+.cap-card p{font-size:13px;color:var(--text2);line-height:1.7}
 
-.faq-list{max-width:800px}.faq-item{border-bottom:1px solid var(--border)}.faq-q{padding:16px 0;font-size:14.5px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:color .3s}.faq-q:hover{color:var(--blue)}.faq-q::after{content:'+';font-size:20px;color:var(--text3);transition:transform .3s;font-weight:300}.faq-item.open .faq-q::after{transform:rotate(45deg);color:var(--blue)}.faq-a{max-height:0;overflow:hidden;transition:max-height .4s;font-size:13.5px;color:var(--text2);line-height:1.7}.faq-item.open .faq-a{max-height:300px}.faq-a-inner{padding:0 0 16px}
+/* ===== TRUST SECTION ===== */
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:48px}
+.cert{background:var(--white);border:1px solid var(--border-l);border-radius:12px;padding:20px;text-align:center;transition:all .3s}
+.cert:hover{border-color:rgba(26,86,219,.15);transform:translateY(-2px)}
+.cert-icon{font-size:28px;margin-bottom:8px}
+.cert-name{font-size:13px;font-weight:700;margin-bottom:2px}
+.cert-desc{font-size:10px;color:var(--text3)}
+.timeline{display:flex;gap:0;margin:48px 0;overflow-x:auto}
+.tl-step{flex:1;min-width:160px;text-align:center;position:relative}
+.tl-step::before{content:'';position:absolute;top:22px;left:50%;right:-50%;height:2px;background:var(--border)}
+.tl-step:last-child::before{display:none}
+.tl-num{width:44px;height:44px;border-radius:50%;background:var(--white);border:2px solid var(--steel);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;position:relative;z-index:1;font-size:16px;color:var(--steel);font-weight:800}
+.tl-title{font-size:13px;font-weight:700;margin-bottom:4px}
+.tl-desc{font-size:11px;color:var(--text3);padding:0 8px}
+.delivery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.delivery-card{background:var(--white);border:1px solid var(--border-l);border-radius:var(--radius);padding:28px}
+.delivery-card h4{font-size:15px;font-weight:700;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border-l)}
+.delivery-item{font-size:13px;color:var(--text2);padding:6px 0;display:flex;align-items:baseline;gap:10px}
+.delivery-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:5px}
 
-.contact-section{background:linear-gradient(180deg,#fff,var(--bg2))}.contact-grid{display:grid;grid-template-columns:1fr;gap:36px}@media(min-width:768px){.contact-grid{grid-template-columns:1fr 1fr}}
-.contact-info h2{font-size:clamp(26px,3vw,34px);font-weight:800;margin-bottom:18px;line-height:1.2}.contact-info h2 .gr{background:var(--accent-g);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.contact-info>p{font-size:14.5px;color:var(--text2);margin-bottom:24px;line-height:1.7}
-.contact-checks{list-style:none;margin-bottom:28px}.contact-checks li{font-size:13.5px;color:var(--text2);padding:5px 0}.contact-checks li::before{content:'✓ ';color:var(--blue);font-weight:700}
-.contact-methods{display:flex;flex-direction:column;gap:12px;margin-top:20px}.c-method{display:flex;align-items:center;gap:10px;font-size:13.5px}.c-label{color:var(--text3);width:55px;font-weight:500}.c-value{color:var(--blue);font-weight:600}
-.lead-form{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow-md)}.lead-form h3{font-size:17px;font-weight:700;margin-bottom:4px}.form-sub{font-size:12px;color:var(--text3);margin-bottom:22px}
-.form-row{margin-bottom:16px}.form-row label{display:block;font-size:12px;color:var(--text2);margin-bottom:5px;font-weight:500}.form-row input,.form-row select,.form-row textarea{width:100%;padding:10px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:13.5px;font-family:var(--font);transition:border-color .3s}.form-row input:focus,.form-row select:focus,.form-row textarea:focus{outline:none;border-color:var(--blue);background:#fff}.form-row textarea{resize:vertical;min-height:70px}.form-row select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23536580'%3E%3Cpath d='M2 4l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+/* ===== FAQ ===== */
+.faq-list{max-width:800px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--border-l)}
+.faq-q{padding:18px 0;font-size:15px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:color .3s}
+.faq-q:hover{color:var(--steel)}
+.faq-q::after{content:'+';font-size:22px;color:var(--text3);font-weight:300;transition:transform .3s}
+.faq-item.open .faq-q::after{transform:rotate(45deg);color:var(--steel)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s;font-size:14px;color:var(--text2);line-height:1.8}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a-inner{padding:0 0 18px}
+
+/* ===== CONTACT ===== */
+.contact-section{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.contact-section::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(8,145,178,.1),transparent 70%)}
+.contact-grid{display:grid;grid-template-columns:1fr;gap:40px;position:relative;z-index:1}
+@media(min-width:768px){.contact-grid{grid-template-columns:1fr 1fr}}
+.contact-info h2{font-size:clamp(28px,3.5vw,38px);font-weight:900;margin-bottom:20px;line-height:1.15}
+.contact-info h2 em{font-style:normal;background:linear-gradient(135deg,var(--teal-l),var(--steel-l));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.contact-info>p{font-size:15px;color:rgba(255,255,255,.6);margin-bottom:28px;line-height:1.8}
+.contact-checks{list-style:none;margin-bottom:32px}.contact-checks li{font-size:14px;color:rgba(255,255,255,.7);padding:6px 0}.contact-checks li::before{content:'✓ ';color:var(--teal-l);font-weight:700}
+.c-methods{display:flex;flex-direction:column;gap:14px}.c-method{display:flex;align-items:center;gap:12px;font-size:14px}.c-label{color:rgba(255,255,255,.4);width:50px;font-weight:500;flex-shrink:0}.c-val{color:#fff;font-weight:600}
+.lead-form{background:var(--white);border-radius:var(--radius);padding:36px;color:var(--text);box-shadow:var(--shadow-lg)}
+.lead-form h3{font-size:18px;font-weight:800;margin-bottom:4px;color:var(--text)}
+.form-sub{font-size:12px;color:var(--text3);margin-bottom:24px}
+.form-row{margin-bottom:16px}.form-row label{display:block;font-size:12px;color:var(--text2);margin-bottom:5px;font-weight:600}
+.form-row input,.form-row select,.form-row textarea{width:100%;padding:11px 14px;background:var(--bg);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:14px;font-family:var(--font);transition:border-color .3s}
+.form-row input:focus,.form-row select:focus,.form-row textarea:focus{outline:none;border-color:var(--steel);background:#fff;box-shadow:0 0 0 3px rgba(26,86,219,.08)}
+.form-row textarea{resize:vertical;min-height:70px}
+.form-row select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%234a5e78'%3E%3Cpath d='M2 4l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
 .form-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.form-submit{width:100%;padding:13px;background:var(--accent-g);color:#fff;border:none;border-radius:10px;font-weight:700;font-size:14px;cursor:pointer;margin-top:6px;box-shadow:0 4px 14px rgba(26,86,219,.25)}.form-submit:hover{opacity:.9}
+.form-submit{width:100%;padding:14px;background:var(--accent-g);color:#fff;border:none;border-radius:12px;font-weight:700;font-size:15px;cursor:pointer;margin-top:8px;box-shadow:0 4px 16px rgba(26,86,219,.3);transition:all .3s}
+.form-submit:hover{box-shadow:0 6px 24px rgba(26,86,219,.4);transform:translateY(-1px)}
 
-footer{border-top:1px solid var(--border);padding:52px 32px 28px;background:var(--bg2)}.footer-inner{max-width:1280px;margin:0 auto}.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:32px;margin-bottom:36px}.footer-col h5{font-size:13.5px;font-weight:700;margin-bottom:14px}.footer-col a,.footer-col p{font-size:12px;color:var(--text3);display:block;padding:3px 0;line-height:1.6}.footer-col a:hover{color:var(--blue)}.f-highlight{color:var(--blue)!important;font-weight:600!important}.footer-bottom{border-top:1px solid var(--border);padding-top:22px;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}.footer-bottom p{font-size:11px;color:var(--text3)}
+/* ===== FOOTER ===== */
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding:56px 40px 28px;color:rgba(255,255,255,.5)}
+.footer-inner{max-width:1320px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:36px;margin-bottom:40px}
+.footer-col h5{font-size:14px;font-weight:700;margin-bottom:16px;color:#fff}
+.footer-col a,.footer-col p{font-size:12.5px;color:rgba(255,255,255,.4);display:block;padding:3px 0;line-height:1.6;transition:color .3s}
+.footer-col a:hover{color:var(--teal-l)}
+.f-highlight{color:var(--teal-l)!important;font-weight:600!important}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;font-size:11px}
 
-.float-cta{position:fixed;bottom:24px;right:24px;z-index:900;display:flex;flex-direction:column;gap:10px}.float-btn{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;border:none;cursor:pointer;transition:transform .3s}.float-btn:hover{transform:scale(1.1)}.float-btn.phone{background:var(--accent-g);color:#fff;box-shadow:0 4px 16px rgba(26,86,219,.35)}.float-btn.top{background:#fff;color:var(--text2);border:1px solid var(--border);box-shadow:var(--shadow)}
-@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}.anim{opacity:0}.anim.visible{animation:fadeUp .55s ease-out forwards}.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.3s}.d4{animation-delay:.4s}
-@media(max-width:640px){section{padding:56px 20px}.nav-inner{padding:0 16px}.form-2col{grid-template-columns:1fr}.hero{padding:110px 20px 56px}.hero-stats{gap:24px}.footer-grid{grid-template-columns:1fr 1fr}.audience-grid{grid-template-columns:1fr}.products-grid{grid-template-columns:1fr}}
+/* ===== FLOAT ===== */
+.float-cta{position:fixed;bottom:28px;right:28px;z-index:900;display:flex;flex-direction:column;gap:10px}
+.float-btn{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;border:none;cursor:pointer;transition:transform .3s}
+.float-btn:hover{transform:scale(1.1)}
+.float-btn.phone{background:var(--accent-g);color:#fff;box-shadow:0 4px 20px rgba(26,86,219,.4)}
+.float-btn.top{background:var(--white);color:var(--text2);border:1px solid var(--border);box-shadow:var(--shadow)}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:640px){
+  section{padding:64px 20px}.nav-inner{padding:0 20px;height:64px}
+  .hero-inner{padding:120px 20px 80px}.hero h1{font-size:32px}
+  .form-2col{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .trust-bar-inner{gap:20px}.trust-bar{padding:16px 20px}
+  .products-grid{grid-template-columns:1fr}
+  .pain-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
-<nav class="nav" id="nav"><div class="nav-inner">
+
+<!-- NAV -->
+<nav class="nav at-top" id="nav"><div class="nav-bg" style="position:absolute;inset:0;transition:all .4s"></div><div class="nav-inner" style="position:relative;z-index:1">
 <a href="index.html" class="logo"><div class="logo-mark">ASM</div><span class="logo-text">ASM-AI</span><span class="logo-sub">爱思摩科技</span></a>
 <div class="nav-links">
-  <div class="mega-trigger"><span data-i="nav1">产品</span><div class="mega-panel pm">
-    <a href="products/bs1.html" class="mega-item"><div class="mi-model">BS1</div><div class="mi-name" data-i="mn10">AI监护基站</div><div class="mi-desc" data-i="md10">边缘AI · 脱岗检测 · 声光报警</div></a>
-    <a href="products/eg1.html" class="mega-item"><div class="mi-model">EG1</div><div class="mi-name" data-i="mn11">储能巡检网关</div><div class="mi-desc" data-i="md11">Modbus · 双路RS485 · DIN导轨</div></a>
-    <a href="products/fp1.html" class="mega-item"><div class="mi-model">FP1</div><div class="mi-name" data-i="mn9">消防水压终端</div><div class="mi-desc" data-i="md9">免布线 · 电池供电 · 4G</div></a>
-    <a href="products/se1.html" class="mega-item"><div class="mi-model">SE1</div><div class="mi-name" data-i="mn1">特种设备监控节点</div><div class="mi-desc" data-i="md1">磁吸安装 · 振动 · 温度</div></a>
-    <a href="products/w1.html" class="mega-item"><div class="mi-model">W1</div><div class="mi-name" data-i="mn2">水利站监测终端</div><div class="mi-desc" data-i="md2">太阳能 · 雷达水位</div></a>
-    <a href="products/gf1.html" class="mega-item"><div class="mi-model">GF1</div><div class="mi-name" data-i="mn3">燃气消防终端</div><div class="mi-desc" data-i="md3">CH4+CO · 电磁阀联动</div></a>
-    <a href="products/aq1.html" class="mega-item"><div class="mi-model">AQ1</div><div class="mi-name" data-i="mn4">污水水质终端</div><div class="mi-desc" data-i="md4">六参数 · HJ 212</div></a>
-    <a href="products/uf1.html" class="mega-item"><div class="mi-model">UF1</div><div class="mi-name" data-i="mn5">内涝地灾终端</div><div class="mi-desc" data-i="md5">GNSS · 倾斜 · 裂缝</div></a>
-    <a href="products/er1.html" class="mega-item"><div class="mi-model">ER1</div><div class="mi-name" data-i="mn6">配电室终端</div><div class="mi-desc" data-i="md6">ΔT差温 · 漏水 · 烟感</div></a>
-    <a href="products/cz1.html" class="mega-item"><div class="mi-model">CZ1</div><div class="mi-name" data-i="mn7">化工安全终端</div><div class="mi-desc" data-i="md7">防爆 · LEL/TOX/PID</div></a>
-    <a href="products/rw1.html" class="mega-item"><div class="mi-model">RW1</div><div class="mi-name" data-i="mn8">农村供水终端</div><div class="mi-desc" data-i="md8">余氯 · 压力 · 泵控</div></a>
-  </div></div>
-  <div class="mega-trigger"><span data-i="nav2">解决方案</span><div class="mega-panel sm">
-    <a href="#solutions" class="mega-item"><div class="mi-model" data-i="sn8">AI安全监护</div><div class="mi-name" data-i="st8">动火作业AI监护</div></a>
-    <a href="#solutions" class="mega-item"><div class="mi-model" data-i="sn7">消防水压</div><div class="mi-name" data-i="st7">消防管网水压监测</div></a>
-    <a href="#solutions" class="mega-item"><div class="mi-model" data-i="sn1">水利水务</div><div class="mi-name" data-i="st1">小型水库安全监测</div></a>
-    <a href="#solutions" class="mega-item"><div class="mi-model" data-i="sn2">燃气消防</div><div class="mi-name" data-i="st2">城市生命线监测</div></a>
-    <a href="#solutions" class="mega-item"><div class="mi-model" data-i="sn3">配电安全</div><div class="mi-name" data-i="st3">配电室环境监测</div></a>
-    <a href="#solutions" class="mega-item"><div class="mi-model" data-i="sn4">特种设备</div><div class="mi-name" data-i="st4">设备在线安全监测</div></a>
-    <a href="#solutions" class="mega-item"><div class="mi-model" data-i="sn5">污水监测</div><div class="mi-name" data-i="st5">水污染源在线监测</div></a>
-    <a href="#solutions" class="mega-item"><div class="mi-model" data-i="sn6">内涝地灾</div><div class="mi-name" data-i="st6">城市内涝预警</div></a>
-  </div></div>
-  <a href="#trust" data-i="nav3">资质交付</a>
-  <a href="#faq" data-i="nav4">常见问题</a>
-  <div class="nav-phone"><span data-i="nav5">电话</span> <span>0755-2774 2413</span></div>
-  <button class="lang-btn" onclick="toggleLang()">EN</button>
-  <a href="#contact" class="nav-cta" data-i="nav6">获取方案</a>
+  <a href="#solutions">解决方案</a>
+  <a href="#products">产品</a>
+  <a href="#trust">资质交付</a>
+  <a href="#faq">常见问题</a>
+  <div class="nav-phone">📞 <span>0755-2774 2413</span></div>
+  <a href="#contact" class="nav-cta">获取方案报价</a>
 </div>
 <div class="hamburger" onclick="document.getElementById('mm').classList.toggle('open')"><span></span><span></span><span></span></div>
 </div></nav>
+
 <div class="mobile-menu" id="mm">
-<div class="m-sec" data-i="nav1">产品</div>
-<a href="products/bs1.html" onclick="this.parentElement.classList.remove('open')">BS1 <span data-i="mn10">AI监护基站</span></a>
-<a href="products/eg1.html" onclick="this.parentElement.classList.remove('open')">EG1 <span data-i="mn11">储能巡检网关</span></a>
-<a href="products/fp1.html" onclick="this.parentElement.classList.remove('open')">FP1 <span data-i="mn9">消防水压终端</span></a>
-<a href="products/se1.html" onclick="this.parentElement.classList.remove('open')">SE1 <span data-i="mn1">特种设备监控节点</span></a>
-<a href="products/w1.html" onclick="this.parentElement.classList.remove('open')">W1 <span data-i="mn2">水利站监测终端</span></a>
-<a href="products/gf1.html" onclick="this.parentElement.classList.remove('open')">GF1 <span data-i="mn3">燃气消防终端</span></a>
-<a href="products/aq1.html" onclick="this.parentElement.classList.remove('open')">AQ1 <span data-i="mn4">污水水质终端</span></a>
-<a href="products/er1.html" onclick="this.parentElement.classList.remove('open')">ER1 <span data-i="mn6">配电室终端</span></a>
-<a href="products/cz1.html" onclick="this.parentElement.classList.remove('open')">CZ1 <span data-i="mn7">化工安全终端</span></a>
-<a href="products/rw1.html" onclick="this.parentElement.classList.remove('open')">RW1 <span data-i="mn8">农村供水终端</span></a>
-<div class="m-sec" data-i="nav2">解决方案</div>
-<a href="#solutions" onclick="this.parentElement.classList.remove('open')" data-i="sn7">消防水压</a>
-<a href="#solutions" onclick="this.parentElement.classList.remove('open')" data-i="sn1">水利水务</a>
-<a href="#solutions" onclick="this.parentElement.classList.remove('open')" data-i="sn2">燃气消防</a>
-<div class="m-sec">Support</div>
-<a href="#trust" onclick="this.parentElement.classList.remove('open')" data-i="nav3">资质交付</a>
-<a href="#faq" onclick="this.parentElement.classList.remove('open')" data-i="nav4">常见问题</a>
-<a href="#contact" onclick="this.parentElement.classList.remove('open')" data-i="nav6">获取方案</a>
-<div style="padding:12px 0"><button class="lang-btn" onclick="toggleLang()" style="width:100%;padding:10px">EN / 中文 切换</button></div>
-<div class="m-phone">0755-2774 2413 | 贾先生 18002504814</div>
+<a href="#solutions" onclick="this.parentElement.classList.remove('open')">解决方案</a>
+<a href="#products" onclick="this.parentElement.classList.remove('open')">全部产品</a>
+<a href="#trust" onclick="this.parentElement.classList.remove('open')">资质交付</a>
+<a href="#faq" onclick="this.parentElement.classList.remove('open')">常见问题</a>
+<a href="#contact" onclick="this.parentElement.classList.remove('open')">获取方案</a>
+<div style="padding:16px 0;color:var(--steel);font-weight:700;font-size:16px">0755-2774 2413<br><span style="font-size:14px">贾先生 18002504814</span></div>
 </div>
 
-<section class="hero"><div class="hero-inner"><div class="hero-content">
-<div class="hero-label anim"><span class="dot"></span><span data-i="h1">覆盖 11 大关键基础设施行业 · 4G 即装即用</span></div>
-<h1 class="anim d1"><span data-i="h2">工业级</span><span class="gr" data-i="h3">智能监测终端</span></h1>
-<p class="hero-desc anim d2" data-i="h4">为政府监管部门、公用事业单位和系统集成商提供即装即用的 4G 物联网监测终端。开箱部署，合规对接，数据直达监管平台。</p>
-<div class="hero-btns anim d3"><a href="#contact" class="btn btn-primary" data-i="h5">获取行业解决方案</a><a href="#products" class="btn btn-outline" data-i="h6">查看全部产品</a></div>
-<div class="hero-stats anim d4">
-<div class="hero-stat"><div class="hero-stat-num">11</div><div class="hero-stat-label" data-i="hs1">行业场景覆盖</div></div>
-<div class="hero-stat"><div class="hero-stat-num" data-i="hs2v">15min</div><div class="hero-stat-label" data-i="hs2">快速部署</div></div>
-<div class="hero-stat"><div class="hero-stat-num" data-i="hs3v">4G全网通</div><div class="hero-stat-label" data-i="hs3">插卡即联网</div></div>
-<div class="hero-stat"><div class="hero-stat-num">15+</div><div class="hero-stat-label" data-i="hs4">合规标准对接</div></div>
+<!-- HERO -->
+<section class="hero">
+<div class="hero-grid-pattern"></div>
+<div class="hero-inner">
+<div>
+<div class="hero-eyebrow"><span class="pulse"></span>深圳研发 · 11大行业 · 4G即装即用</div>
+<h1>让关键基础设施<br>从"不可见"变成<br><em>实时可控</em></h1>
+<p class="hero-desc">为政府监管部门、公用事业单位和系统集成商提供即装即用的4G物联网监测终端。开箱部署，合规对接，数据直达监管平台——让每一个监测盲区变成可视化数据。</p>
+<div class="hero-btns">
+<a href="#contact" class="btn btn-primary">获取行业解决方案 →</a>
+<a href="#products" class="btn btn-white">查看全部产品</a>
 </div>
-</div><div class="hero-visual anim d2"><img src="images/FP1.png" alt="ASM-AI FP1"></div></div></section>
-
-<section class="bg-alt" id="audience"><div class="sec-inner">
-<div class="sec-label">Who We Serve</div>
-<div class="sec-title" data-i="a0">找到适合您的方案</div>
-<div class="sec-desc" data-i="a0d">不同角色，不同需求。选择您的身份，获取针对性的方案建议。</div>
-<div class="audience-grid">
-<a href="#contact" class="audience-card anim"><div class="aud-icon">🏛</div><h4 data-i="a1">政府与监管部门</h4><div class="aud-types" data-i="a1t">水利局 · 应急管理局 · 市场监管局 · 生态环境局</div><p data-i="a1d">支撑非现场监管体系建设，数据直达监管平台</p></a>
-<a href="#contact" class="audience-card anim d1"><div class="aud-icon">🏭</div><h4 data-i="a2">公用事业与运营方</h4><div class="aud-types" data-i="a2t">水务集团 · 燃气公司 · 物业公司 · 化工园区</div><p data-i="a2d">降低人工巡检成本，7×24 无人值守监测</p></a>
-<a href="#contact" class="audience-card anim d2"><div class="aud-icon">🔧</div><h4 data-i="a3">系统集成商</h4><div class="aud-types" data-i="a3t">安防集成 · 环保工程 · 电力工程 · IT服务</div><p data-i="a3d">标准化硬件模块和开放 API，缩短项目交付周期</p></a>
-<a href="#contact" class="audience-card anim d3"><div class="aud-icon">⚙</div><h4 data-i="a4">设备制造商 OEM</h4><div class="aud-types" data-i="a4t">特种设备厂 · 电气设备厂 · 水处理设备厂</div><p data-i="a4d">统一平台定制开发，最小批量 50 台起</p></a>
-</div></div></section>
-
-<section id="products"><div class="sec-inner">
-<div class="sec-label">Products</div>
-<div class="sec-title" data-i="p0">全系列智能监测终端</div>
-<div class="sec-desc" data-i="p0d">统一平台，11 大场景。每款产品针对行业痛点深度定制，即装即用。</div>
-<div class="products-grid">
-<div class="p-card anim"><div class="p-img"><img src="images/BS1.png" alt="BS1" loading="lazy"></div><div class="p-info"><div class="p-tags"><span class="ptag ptag-m">BS1</span><span class="ptag ptag-ip">IP65</span><span class="ptag ptag-new">NEW</span></div><h3 data-i="p10n">AI监护基站</h3><p class="p-value" data-i="p10v">动火作业监护人脱岗AI检测，边缘推理+声光报警</p><div class="p-features"><span class="p-feat" data-i="p10f1">RK3568 NPU边缘AI，YOLOv5n人体检测</span><span class="p-feat" data-i="p10f2">120°广角1080P+红外补光，覆盖全场景</span><span class="p-feat" data-i="p10f3">三脚架便携部署，10分钟开机即用</span></div><a href="products/bs1.html" class="p-link" data-i="pMore">了解详情 →</a></div></div>
-
-<div class="p-card anim d1"><div class="p-img"><img src="images/EG1.png" alt="EG1" loading="lazy"></div><div class="p-info"><div class="p-tags"><span class="ptag ptag-m">EG1</span><span class="ptag ptag-ip">DIN导轨</span><span class="ptag ptag-new">NEW</span></div><h3 data-i="p11n">储能远程巡检网关</h3><p class="p-value" data-i="p11v">Modbus RTU只读采集，4G远程监控储能柜状态</p><div class="p-features"><span class="p-feat" data-i="p11f1">双路光耦隔离RS485，独立接BMS和PCS</span><span class="p-feat" data-i="p11f2">SOC+功率+温度+告警11个核心字段</span><span class="p-feat" data-i="p11f3">DIN导轨安装，10分钟接线开机</span></div><a href="products/eg1.html" class="p-link" data-i="pMore">了解详情 →</a></div></div>
-
-<div class="p-card anim d2"><div class="p-img"><img src="images/FP1.png" alt="FP1" loading="lazy"></div><div class="p-info"><div class="p-tags"><span class="ptag ptag-m">FP1</span><span class="ptag ptag-ip">IP67</span><span class="ptag ptag-new">NEW</span></div><h3 data-i="p9n">消防水压智能监测终端</h3><p class="p-value" data-i="p9v">免布线电池供电，消防管网24h水压在线监测</p><div class="p-features"><span class="p-feat" data-i="p9f1">分体式设计，外接不锈钢压力变送器</span><span class="p-feat" data-i="p9f2">ER34615锂亚电池，续航2年+免维护</span><span class="p-feat" data-i="p9f3">15分钟安装，微信小程序实时告警</span></div><a href="products/fp1.html" class="p-link" data-i="pMore">了解详情 →</a></div></div>
-<div class="p-card anim d1"><div class="p-img"><img src="images/SE1.png" alt="SE1" loading="lazy"></div><div class="p-info"><div class="p-tags"><span class="ptag ptag-m">SE1</span><span class="ptag ptag-ip">IP67</span><span class="ptag ptag-ex">ExdIIC T6</span></div><h3 data-i="p1n">特种设备智能监控节点</h3><p class="p-value" data-i="p1v">磁吸安装10秒上机，振动+温度实时预警</p><div class="p-features"><span class="p-feat" data-i="p1f1">名片大小 85×55mm，电池3年免维护</span><span class="p-feat" data-i="p1f2">内置MEMS振动+温度，M12航插外接</span><span class="p-feat" data-i="p1f3">防爆版可选，支持特检院数据对接</span></div><a href="products/se1.html" class="p-link" data-i="pMore">了解详情 →</a></div></div>
-<div class="p-card anim d2"><div class="p-img"><img src="images/W1.png" alt="W1" loading="lazy"></div><div class="p-info"><div class="p-tags"><span class="ptag ptag-m">W1</span><span class="ptag ptag-ip">IP68</span></div><h3 data-i="p2n">小型水利站监测终端</h3><p class="p-value" data-i="p2v">太阳能供电无人值守，全要素监测</p><div class="p-features"><span class="p-feat" data-i="p2f1">SL 651 水文协议，直连水利监管平台</span><span class="p-feat" data-i="p2f2">太阳能20W+电池，连续阴雨15天</span><span class="p-feat" data-i="p2f3">单站部署2小时，无需布线布网</span></div><a href="products/w1.html" class="p-link" data-i="pMore">了解详情 →</a></div></div>
-<div class="p-card anim d3"><div class="p-img"><img src="images/GF1.png" alt="GF1" loading="lazy"></div><div class="p-info"><div class="p-tags"><span class="ptag ptag-m">GF1</span><span class="ptag ptag-ip">吸顶/壁挂</span></div><h3 data-i="p3n">燃气消防一体化终端</h3><p class="p-value" data-i="p3v">燃气+火灾+电气三合一，自动切断</p><div class="p-features"><span class="p-feat" data-i="p3f1">CH4+CO+烟感+温感+电弧，五重防护</span><span class="p-feat" data-i="p3f2">联动电磁阀自动切断，85dB声光报警</span><span class="p-feat" data-i="p3f3">适合餐饮/商业/小区批量项目部署</span></div><a href="products/gf1.html" class="p-link" data-i="pMore">了解详情 →</a></div></div>
-<div class="p-card anim"><div class="p-img"><img src="images/AQ1.png" alt="AQ1" loading="lazy"></div><div class="p-info"><div class="p-tags"><span class="ptag ptag-m">AQ1</span><span class="ptag ptag-ip">HJ 212</span></div><h3 data-i="p4n">污水水质监测终端</h3><p class="p-value" data-i="p4v">UV254免试剂COD六参数在线监测</p><div class="p-features"><span class="p-feat" data-i="p4f1">HJ 212协议，直连环保监管平台</span><span class="p-feat" data-i="p4f2">自动清洗系统，减少人工维护</span><span class="p-feat" data-i="p4f3">适合农村污水站、排污口监测</span></div><a href="products/aq1.html" class="p-link" data-i="pMore">了解详情 →</a></div></div>
-<div class="p-card anim d1"><div class="p-img"><img src="images/UF1.png" alt="UF1" loading="lazy"></div><div class="p-info"><div class="p-tags"><span class="ptag ptag-m">UF1</span><span class="ptag ptag-ip">IP68</span></div><h3 data-i="p5n">城市内涝与地灾终端</h3><p class="p-value" data-i="p5v">积水+GNSS位移+倾斜+裂缝监测</p><div class="p-features"><span class="p-feat" data-i="p5f1">GNSS RTK ±5mm精度</span><span class="p-feat" data-i="p5f2">三级防雷+IP68，极端气候可靠</span><span class="p-feat" data-i="p5f3">适合桥梁、边坡、低洼路段</span></div><a href="products/uf1.html" class="p-link" data-i="pMore">了解详情 →</a></div></div>
-<div class="p-card anim d2"><div class="p-img"><img src="images/ER1.png" alt="ER1" loading="lazy"></div><div class="p-info"><div class="p-tags"><span class="ptag ptag-m">ER1</span><span class="ptag ptag-ip">壁挂/DIN导轨</span></div><h3 data-i="p6n">配电室监测终端</h3><p class="p-value" data-i="p6v">温湿度+三相ΔT差温+剩余电流+漏水</p><div class="p-features"><span class="p-feat" data-i="p6f1">创新三相差温算法</span><span class="p-feat" data-i="p6f2">RJ45+4G双通道</span><span class="p-feat" data-i="p6f3">壁挂或DIN导轨安装</span></div><a href="products/er1.html" class="p-link" data-i="pMore">了解详情 →</a></div></div>
-<div class="p-card anim d3"><div class="p-img"><img src="images/CZ1.png" alt="CZ1" loading="lazy"></div><div class="p-info"><div class="p-tags"><span class="ptag ptag-m">CZ1</span><span class="ptag ptag-ex">ExdIIC T6</span></div><h3 data-i="p7n">化工高风险智能终端</h3><p class="p-value" data-i="p7v">可燃/有毒/VOCs多气体监测</p><div class="p-features"><span class="p-feat" data-i="p7f1">ExdIIC T6防爆，SIL 2可选</span><span class="p-feat" data-i="p7f2">LEL/TOX/PID三气室</span><span class="p-feat" data-i="p7f3">化工园区、储罐区、加油站</span></div><a href="products/cz1.html" class="p-link" data-i="pMore">了解详情 →</a></div></div>
-<div class="p-card anim"><div class="p-img"><img src="images/RW1.png" alt="RW1" loading="lazy"></div><div class="p-info"><div class="p-tags"><span class="ptag ptag-m">RW1</span><span class="ptag ptag-ip">IP65</span></div><h3 data-i="p8n">农村供水数字化终端</h3><p class="p-value" data-i="p8v">余氯+浊度+pH+管网压力+流量</p><div class="p-features"><span class="p-feat" data-i="p8f1">GB 5749饮用水标准合规</span><span class="p-feat" data-i="p8f2">泵站远程启停+变频控制</span><span class="p-feat" data-i="p8f3">县域千人以上供水工程</span></div><a href="products/rw1.html" class="p-link" data-i="pMore">了解详情 →</a></div></div>
-</div></div></section>
-
-<section class="bg-alt" id="solutions"><div class="sec-inner">
-<div class="sec-label">Solutions</div>
-<div class="sec-title" data-i="s0">行业解决方案</div>
-<div class="sec-desc" data-i="s0d">每个行业都有专属的监测方案、合规对接能力和部署模式。</div>
-<div class="sol-tabs">
-<div class="sol-tab active" onclick="showSol(0)" data-i="sn8">AI安全监护</div>
-<div class="sol-tab" onclick="showSol(1)" data-i="sn9">储能巡检</div>
-<div class="sol-tab" onclick="showSol(2)" data-i="sn7">消防水压</div>
-<div class="sol-tab" onclick="showSol(3)" data-i="sn1">水利水务</div>
-<div class="sol-tab" onclick="showSol(4)" data-i="sn2">燃气消防</div>
-<div class="sol-tab" onclick="showSol(5)" data-i="sn3">配电安全</div>
-<div class="sol-tab" onclick="showSol(6)" data-i="sn4">特种设备</div>
-<div class="sol-tab" onclick="showSol(7)" data-i="sn5">污水监测</div>
-<div class="sol-tab" onclick="showSol(8)" data-i="sn6">内涝地灾</div>
+<div class="hero-trust">
+<div class="hero-trust-item"><div class="hero-trust-num">11</div><div class="hero-trust-label">行业场景<br>全覆盖</div></div>
+<div class="hero-trust-item"><div class="hero-trust-num">15+</div><div class="hero-trust-label">合规标准<br>内置对接</div></div>
+<div class="hero-trust-item"><div class="hero-trust-num">10min</div><div class="hero-trust-label">单点部署<br>即装即用</div></div>
+<div class="hero-trust-item"><div class="hero-trust-num">36</div><div class="hero-trust-label">个月质保<br>全程服务</div></div>
 </div>
-<div class="sol-content active" id="sol-0"><div><h3 data-i="sol8t">动火作业AI安全监护方案</h3><div class="sol-pain"><h4 data-i="solPain">行业痛点</h4><p data-i="sol8p">动火作业要求全程有监护人在场，但人工监护容易脱岗、疲劳，发生事故时追责困难。</p></div><ul class="sol-list"><li>SenseNode BS1 AI监护基站</li><li data-i="sol8l1">RK3568 NPU边缘推理，YOLOv5n人体检测</li><li data-i="sol8l2">监护人脱岗≤10秒声光报警+微信推送</li><li data-i="sol8l3">三脚架便携部署，10分钟开机即用</li><li data-i="sol8l4">触发式截图留证，自动生成监护记录</li></ul><div class="sol-std"><p>GB 30871 · AQ 3022</p></div><div class="sol-cta"><a href="#contact" class="btn btn-primary" data-i="solCta">获取方案书</a></div></div><div style="display:flex;align-items:center;justify-content:center"><img src="images/BS1.png" alt="BS1" style="max-height:280px;object-fit:contain;filter:drop-shadow(0 12px 24px rgba(0,0,0,.1))"></div></div>
-<div class="sol-content" id="sol-1"><div><h3 data-i="sol7t">消防管网水压监测方案</h3><div class="sol-pain"><h4 data-i="solPain">行业痛点</h4><p data-i="sol7p">消防水系统平时不用、用时必须有，但当前管网水压状态完全不可见，物业人工巡检无法及时发现异常。</p></div><ul class="sol-list"><li>SenseNode FP1 消防水压监测终端</li><li data-i="sol7l1">分体式设计，外接不锈钢压力变送器</li><li data-i="sol7l2">ER34615锂亚电池续航2年+，免布线</li><li data-i="sol7l3">低压/失压/高压/突变四级告警</li><li data-i="sol7l4">微信小程序实时查看，自动生成巡检记录</li></ul><div class="sol-std"><p>GB 25201 · GB 50974</p></div><div class="sol-cta"><a href="#contact" class="btn btn-primary" data-i="solCta">获取方案书</a></div></div><div style="display:flex;align-items:center;justify-content:center"><img src="images/FP1.png" alt="FP1" style="max-height:280px;object-fit:contain;filter:drop-shadow(0 12px 24px rgba(0,0,0,.1))"></div></div>
-<div class="sol-content" id="sol-3"><div><h3 data-i="sol1t">小型水库安全监测方案</h3><div class="sol-pain"><h4 data-i="solPain">行业痛点</h4><p data-i="sol1p">全国9.8万座小型水库中，大量无人值守站点缺乏实时监测手段。</p></div><ul class="sol-list"><li>SenseNode W1 水利站监测终端</li><li data-i="sol1l1">雷达水位计+翻斗雨量计+渗压计</li><li data-i="sol1l2">云平台可视化大屏+微信小程序推送</li><li data-i="sol1l3">单站部署2小时，太阳能供电无需布线</li></ul><div class="sol-std"><p>SL 651-2014</p></div><div class="sol-cta"><a href="#contact" class="btn btn-primary" data-i="solCta">获取方案书</a></div></div><div style="display:flex;align-items:center;justify-content:center"><img src="images/W1.png" alt="W1" style="max-height:280px;object-fit:contain;filter:drop-shadow(0 12px 24px rgba(0,0,0,.1))"></div></div>
-<div class="sol-content" id="sol-4"><div><h3 data-i="sol2t">城市生命线（燃气消防）监测方案</h3><div class="sol-pain"><h4 data-i="solPain">行业痛点</h4><p data-i="sol2p">传统报警器无联网能力，无法远程监控和集中管理。</p></div><ul class="sol-list"><li>SenseNode GF1</li><li data-i="sol2l1">CH4+CO+烟感+温感+电弧 六重监测</li><li data-i="sol2l2">联动电磁阀自动切断，85dB声光报警</li><li data-i="sol2l3">4G实时上报，适合批量项目部署</li></ul><div class="sol-std"><p>GB 15322 · GB 14287</p></div><div class="sol-cta"><a href="#contact" class="btn btn-primary" data-i="solCta">获取方案书</a></div></div><div style="display:flex;align-items:center;justify-content:center"><img src="images/GF1.png" alt="GF1" style="max-height:280px;object-fit:contain;filter:drop-shadow(0 12px 24px rgba(0,0,0,.1))"></div></div>
-<div class="sol-content" id="sol-5"><div><h3 data-i="sol3t">配电安全与数据中心监测方案</h3><div class="sol-pain"><h4 data-i="solPain">行业痛点</h4><p data-i="sol3p">接触不良和漏水是最常见故障源，传统巡检依靠人工。</p></div><ul class="sol-list"><li>SenseNode ER1</li><li data-i="sol3l1">SHT45温湿度+PT100×3三相差温+漏水</li><li data-i="sol3l2">创新ΔT差温算法，识别接触不良</li><li data-i="sol3l3">壁挂或DIN导轨安装，RJ45+4G双通道</li></ul><div class="sol-std"><p>GB 50174 · DL/T 664</p></div><div class="sol-cta"><a href="#contact" class="btn btn-primary" data-i="solCta">获取方案书</a></div></div><div style="display:flex;align-items:center;justify-content:center"><img src="images/ER1.png" alt="ER1" style="max-height:280px;object-fit:contain;filter:drop-shadow(0 12px 24px rgba(0,0,0,.1))"></div></div>
-<div class="sol-content" id="sol-6"><div><h3 data-i="sol4t">特种设备安全监测方案</h3><div class="sol-pain"><h4 data-i="solPain">行业痛点</h4><p data-i="sol4p">起重机、电梯等运行期间缺乏连续监测手段。</p></div><ul class="sol-list"><li data-i="sol4l1">SenseNode SE1 紧凑型监控节点</li><li data-i="sol4l2">磁吸安装10秒上机，振动+温度</li><li data-i="sol4l3">电池续航3年，覆盖完整检验周期</li><li data-i="sol4l4">支持特种设备智慧监管平台对接</li></ul><div class="sol-std"><p>TSG 08 · GB/T 29531</p></div><div class="sol-cta"><a href="#contact" class="btn btn-primary" data-i="solCta">获取方案书</a></div></div><div style="display:flex;align-items:center;justify-content:center"><img src="images/SE1.png" alt="SE1" style="max-height:280px;object-fit:contain;filter:drop-shadow(0 12px 24px rgba(0,0,0,.1))"></div></div>
-<div class="sol-content" id="sol-7"><div><h3 data-i="sol5t">水污染源在线监测方案</h3><div class="sol-pain"><h4 data-i="solPain">行业痛点</h4><p data-i="sol5p">传统实验室化验周期长、成本高，无法实时监控。</p></div><ul class="sol-list"><li>SenseNode AQ1</li><li data-i="sol5l1">UV254免试剂COD+氨氮+总磷+pH+浊度+DO</li><li data-i="sol5l2">自动清洗系统，降低运维频次</li><li data-i="sol5l3">HJ 212协议直连环保监管平台</li></ul><div class="sol-std"><p>HJ 212-2017 · GB 18918</p></div><div class="sol-cta"><a href="#contact" class="btn btn-primary" data-i="solCta">获取方案书</a></div></div><div style="display:flex;align-items:center;justify-content:center"><img src="images/AQ1.png" alt="AQ1" style="max-height:280px;object-fit:contain;filter:drop-shadow(0 12px 24px rgba(0,0,0,.1))"></div></div>
-<div class="sol-content" id="sol-8"><div><h3 data-i="sol6t">城市内涝预警与地灾监测方案</h3><div class="sol-pain"><h4 data-i="solPain">行业痛点</h4><p data-i="sol6p">城市低洼路段缺乏实时感知手段，暴雨期间无法提前预警。</p></div><ul class="sol-list"><li>SenseNode UF1</li><li data-i="sol6l1">超声波液位+雨量+GNSS位移+倾斜</li><li data-i="sol6l2">太阳能供电+三级防雷</li><li data-i="sol6l3">支持城市防汛指挥平台接入</li></ul><div class="sol-std"><p>GB/T 33703</p></div><div class="sol-cta"><a href="#contact" class="btn btn-primary" data-i="solCta">获取方案书</a></div></div><div style="display:flex;align-items:center;justify-content:center"><img src="images/UF1.png" alt="UF1" style="max-height:280px;object-fit:contain;filter:drop-shadow(0 12px 24px rgba(0,0,0,.1))"></div></div>
+</div>
+<div class="hero-visual"><img src="images/FP1.png" alt="ASM-AI 工业级智能监测终端"></div>
+</div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+<div class="trust-bar-inner">
+<div class="trust-badge">🛡 <strong>ExdIIC T6</strong> 防爆认证</div>
+<div class="trust-badge">📋 <strong>ISO 9001</strong> 质量体系</div>
+<div class="trust-badge">🌊 <strong>HJ 212</strong> 环保协议</div>
+<div class="trust-badge">💧 <strong>SL 651</strong> 水文规约</div>
+<div class="trust-badge">⚡ <strong>GB 14287</strong> 电气监控</div>
+<div class="trust-badge">📡 <strong>EMC</strong> 电磁兼容</div>
+</div>
+</div>
+
+<!-- PAIN POINTS -->
+<section><div class="sec-inner">
+<div class="sec-header">
+<div class="sec-eyebrow">Why ASM-AI</div>
+<div class="sec-title">您的监测场景<br>是否面临这些问题？</div>
+</div>
+<div class="pain-grid">
+<div class="pain-card"><div class="pain-num">01</div><h3>巡检靠人跑，两次之间全是盲区</h3><p>物业保安/维保人员定期手动检查，记录在纸质台账上，两次巡检之间设备状态完全不可见。</p><div class="solution">→ 4G远程监测，24h实时可见</div></div>
+<div class="pain-card"><div class="pain-num">02</div><h3>出了事故，追责指向你</h3><p>消防管网无水、储能柜过温、设备故障——一旦出事，运维方和管理方承担连带责任。</p><div class="solution">→ 异常主动告警，留痕可追溯</div></div>
+<div class="pain-card"><div class="pain-num">03</div><h3>布线布网，成本高周期长</h3><p>传统监测方案需要拉网线、装交换机、配服务器，一个站点部署动辄数万元。</p><div class="solution">→ 4G即插即用，单点千元级</div></div>
+<div class="pain-card"><div class="pain-num">04</div><h3>数据无法直连监管平台</h3><p>设备采集的数据需要二次开发才能对接HJ 212、SL 651等政府监管系统。</p><div class="solution">→ 合规协议内置，零开发对接</div></div>
+</div>
 </div></section>
 
-<section><div class="sec-inner">
-<div class="sec-label">Capabilities</div>
-<div class="sec-title" data-i="c0">核心技术能力</div>
-<div class="cap-grid">
-<div class="cap-card anim"><div class="cap-icon">⚡</div><h4 data-i="c1">即装即用</h4><p data-i="c1d">4G全网通开箱联网，插卡即用。磁吸、壁挂、导轨、扎带多种安装方式，无需布线布网，单点部署10~30分钟。</p></div>
-<div class="cap-card anim d1"><div class="cap-icon">🧠</div><h4 data-i="c2">边缘智能</h4><p data-i="c2d">终端内置边缘计算引擎，本地完成FFT频谱分析和趋势预测。减少90%云端流量，断网自动缓存，恢复后补传。</p></div>
-<div class="cap-card anim d2"><div class="cap-icon">📋</div><h4 data-i="c3">合规对接</h4><p data-i="c3d">内置HJ 212、SL 651、GB 14287、Modbus RTU等行业标准协议。数据可直达各级政府监管平台，无需二次开发。</p></div>
-<div class="cap-card anim d3"><div class="cap-icon">🔄</div><h4 data-i="c4">远程运维</h4><p data-i="c4d">OTA空中固件升级，远程参数配置，微信小程序实时查看。设备异常自动报警推送到手机，大幅降低运维投入。</p></div>
-</div></div></section>
+<!-- PRODUCTS -->
+<section class="bg-white" id="products"><div class="sec-inner">
+<div class="sec-header">
+<div class="sec-eyebrow">Products</div>
+<div class="sec-title">全系列工业级监测终端</div>
+<div class="sec-desc">统一技术平台，11大行业场景。每款产品针对行业痛点深度定制，4G即装即用。</div>
+</div>
+<div class="products-grid">
 
-<section class="bg-alt" id="trust"><div class="sec-inner">
-<div class="sec-label">Trust</div>
-<div class="sec-title" data-i="t0">资质与交付能力</div>
-<div class="sec-desc" data-i="t0d">从认证合规到批量交付，给您完整的信任保障。</div>
-<div class="badge-grid">
-<div class="badge anim"><div class="badge-icon">🛡</div><div class="badge-name">ExdIIC T6</div><div class="badge-desc" data-i="b1">防爆认证 GB 3836</div></div>
-<div class="badge anim d1"><div class="badge-icon">🌊</div><div class="badge-name">HJ 212</div><div class="badge-desc" data-i="b2">环保数据传输</div></div>
-<div class="badge anim d1"><div class="badge-icon">💧</div><div class="badge-name">SL 651</div><div class="badge-desc" data-i="b3">水文监测规约</div></div>
-<div class="badge anim d2"><div class="badge-icon">⚡</div><div class="badge-name">GB 14287</div><div class="badge-desc" data-i="b4">电气火灾监控</div></div>
-<div class="badge anim d2"><div class="badge-icon">📋</div><div class="badge-name">ISO 9001</div><div class="badge-desc" data-i="b5">质量管理体系</div></div>
-<div class="badge anim d3"><div class="badge-icon">📡</div><div class="badge-name">EMC</div><div class="badge-desc" data-i="b6">电磁兼容 GB/T 17626</div></div>
+<div class="p-card"><div class="p-img"><img src="images/BS1.png" alt="BS1" loading="lazy"></div><div class="p-body"><div class="p-tags"><span class="ptag ptag-m">BS1</span><span class="ptag ptag-ip">IP65</span><span class="ptag ptag-new">NEW</span></div><h3>AI监护基站</h3><p class="p-desc">动火作业监护人脱岗AI检测，边缘推理+声光报警</p><div class="p-feats"><span class="p-feat">RK3568 NPU边缘AI，YOLOv5n人体检测</span><span class="p-feat">120°广角1080P+红外，覆盖全场景</span><span class="p-feat">三脚架便携部署，10分钟开机即用</span></div><a href="products/bs1.html" class="p-link">了解详情 →</a></div></div>
+
+<div class="p-card"><div class="p-img"><img src="images/EG1.png" alt="EG1" loading="lazy"></div><div class="p-body"><div class="p-tags"><span class="ptag ptag-m">EG1</span><span class="ptag ptag-ip">DIN导轨</span><span class="ptag ptag-new">NEW</span></div><h3>储能远程巡检网关</h3><p class="p-desc">Modbus RTU只读采集，4G远程监控储能柜状态</p><div class="p-feats"><span class="p-feat">双路光耦隔离RS485，独立接BMS和PCS</span><span class="p-feat">SOC+功率+温度+告警核心字段</span><span class="p-feat">DIN导轨安装，10分钟接线开机</span></div><a href="products/eg1.html" class="p-link">了解详情 →</a></div></div>
+
+<div class="p-card"><div class="p-img"><img src="images/FP1.png" alt="FP1" loading="lazy"></div><div class="p-body"><div class="p-tags"><span class="ptag ptag-m">FP1</span><span class="ptag ptag-ip">IP67</span><span class="ptag ptag-new">NEW</span></div><h3>消防水压监测终端</h3><p class="p-desc">免布线电池供电，消防管网24h水压在线监测</p><div class="p-feats"><span class="p-feat">分体式设计，外接不锈钢压力变送器</span><span class="p-feat">ER34615锂亚电池，续航2年+免维护</span><span class="p-feat">15分钟安装，微信小程序实时告警</span></div><a href="products/fp1.html" class="p-link">了解详情 →</a></div></div>
+
+<div class="p-card"><div class="p-img"><img src="images/SE1.png" alt="SE1" loading="lazy"></div><div class="p-body"><div class="p-tags"><span class="ptag ptag-m">SE1</span><span class="ptag ptag-ip">IP67</span><span class="ptag ptag-ex">ExdIIC T6</span></div><h3>特种设备监控节点</h3><p class="p-desc">磁吸安装10秒上机，振动+温度实时预警</p><div class="p-feats"><span class="p-feat">名片大小 85×55mm，电池3年免维护</span><span class="p-feat">内置MEMS振动+温度，M12航插外接</span><span class="p-feat">防爆版可选，支持特检院数据对接</span></div><a href="products/se1.html" class="p-link">了解详情 →</a></div></div>
+
+<div class="p-card"><div class="p-img"><img src="images/W1.png" alt="W1" loading="lazy"></div><div class="p-body"><div class="p-tags"><span class="ptag ptag-m">W1</span><span class="ptag ptag-ip">IP68</span></div><h3>小型水利站监测终端</h3><p class="p-desc">太阳能供电无人值守，全要素监测</p><div class="p-feats"><span class="p-feat">SL 651水文协议，直连水利监管平台</span><span class="p-feat">太阳能20W+电池，连续阴雨15天</span><span class="p-feat">单站部署2小时，无需布线布网</span></div><a href="products/w1.html" class="p-link">了解详情 →</a></div></div>
+
+<div class="p-card"><div class="p-img"><img src="images/GF1.png" alt="GF1" loading="lazy"></div><div class="p-body"><div class="p-tags"><span class="ptag ptag-m">GF1</span><span class="ptag ptag-ip">吸顶/壁挂</span></div><h3>燃气消防一体化终端</h3><p class="p-desc">燃气+火灾+电气三合一，自动切断</p><div class="p-feats"><span class="p-feat">CH4+CO+烟感+温感+电弧五重防护</span><span class="p-feat">联动电磁阀自动切断，85dB声光报警</span><span class="p-feat">适合餐饮/商业/小区批量部署</span></div><a href="products/gf1.html" class="p-link">了解详情 →</a></div></div>
+
+<div class="p-card"><div class="p-img"><img src="images/AQ1.png" alt="AQ1" loading="lazy"></div><div class="p-body"><div class="p-tags"><span class="ptag ptag-m">AQ1</span><span class="ptag ptag-ip">HJ 212</span></div><h3>污水水质监测终端</h3><p class="p-desc">UV254免试剂COD六参数在线监测</p><div class="p-feats"><span class="p-feat">HJ 212协议，直连环保监管平台</span><span class="p-feat">自动清洗系统，减少人工维护</span><span class="p-feat">适合农村污水站、排污口监测</span></div><a href="products/aq1.html" class="p-link">了解详情 →</a></div></div>
+
+<div class="p-card"><div class="p-img"><img src="images/ER1.png" alt="ER1" loading="lazy"></div><div class="p-body"><div class="p-tags"><span class="ptag ptag-m">ER1</span><span class="ptag ptag-ip">壁挂/DIN导轨</span></div><h3>配电室监测终端</h3><p class="p-desc">温湿度+三相ΔT差温+剩余电流+漏水</p><div class="p-feats"><span class="p-feat">创新三相差温算法</span><span class="p-feat">RJ45+4G双通道</span><span class="p-feat">壁挂或DIN导轨安装</span></div><a href="products/er1.html" class="p-link">了解详情 →</a></div></div>
+
+<div class="p-card"><div class="p-img"><img src="images/CZ1.png" alt="CZ1" loading="lazy"></div><div class="p-body"><div class="p-tags"><span class="ptag ptag-m">CZ1</span><span class="ptag ptag-ex">ExdIIC T6</span></div><h3>化工高风险智能终端</h3><p class="p-desc">可燃/有毒/VOCs多气体监测</p><div class="p-feats"><span class="p-feat">ExdIIC T6防爆，SIL 2可选</span><span class="p-feat">LEL/TOX/PID三气室</span><span class="p-feat">化工园区、储罐区、加油站</span></div><a href="products/cz1.html" class="p-link">了解详情 →</a></div></div>
+
+<div class="p-card"><div class="p-img"><img src="images/UF1.png" alt="UF1" loading="lazy"></div><div class="p-body"><div class="p-tags"><span class="ptag ptag-m">UF1</span><span class="ptag ptag-ip">IP68</span></div><h3>城市内涝与地灾终端</h3><p class="p-desc">积水+GNSS位移+倾斜+裂缝监测</p><div class="p-feats"><span class="p-feat">GNSS RTK ±5mm精度</span><span class="p-feat">三级防雷+IP68</span><span class="p-feat">桥梁、边坡、低洼路段</span></div><a href="products/uf1.html" class="p-link">了解详情 →</a></div></div>
+
+<div class="p-card"><div class="p-img"><img src="images/RW1.png" alt="RW1" loading="lazy"></div><div class="p-body"><div class="p-tags"><span class="ptag ptag-m">RW1</span><span class="ptag ptag-ip">IP65</span></div><h3>农村供水数字化终端</h3><p class="p-desc">余氯+浊度+pH+管网压力+流量</p><div class="p-feats"><span class="p-feat">GB 5749饮用水标准合规</span><span class="p-feat">泵站远程启停+变频控制</span><span class="p-feat">县域千人以上供水工程</span></div><a href="products/rw1.html" class="p-link">了解详情 →</a></div></div>
+
+</div>
+</div></section>
+
+<!-- CAPABILITIES -->
+<section><div class="sec-inner">
+<div class="sec-header">
+<div class="sec-eyebrow">Core Technology</div>
+<div class="sec-title">核心技术能力</div>
+</div>
+<div class="cap-grid">
+<div class="cap-card"><div class="cap-icon">⚡</div><h4>即装即用</h4><p>4G全网通开箱联网。磁吸、壁挂、DIN导轨、三脚架多种安装，单点部署10~30分钟，无需布线布网。</p></div>
+<div class="cap-card"><div class="cap-icon">🧠</div><h4>边缘智能</h4><p>终端内置边缘计算引擎，本地完成FFT频谱分析/AI推理。减少90%云端流量，断网自动缓存补传。</p></div>
+<div class="cap-card"><div class="cap-icon">📋</div><h4>合规对接</h4><p>内置HJ 212、SL 651、GB 14287、Modbus RTU等行业标准协议，数据直达各级政府监管平台。</p></div>
+<div class="cap-card"><div class="cap-icon">🔄</div><h4>远程运维</h4><p>OTA空中固件升级，远程参数配置，微信小程序实时查看。异常自动告警推送，36个月全保。</p></div>
+</div>
+</div></section>
+
+<!-- TRUST -->
+<section class="bg-white" id="trust"><div class="sec-inner">
+<div class="sec-header">
+<div class="sec-eyebrow">Trust & Delivery</div>
+<div class="sec-title">资质认证与交付能力</div>
+<div class="sec-desc">从合规认证到批量交付，给您完整的信任保障。</div>
+</div>
+<div class="cert-grid">
+<div class="cert"><div class="cert-icon">🛡</div><div class="cert-name">ExdIIC T6</div><div class="cert-desc">防爆认证 GB 3836</div></div>
+<div class="cert"><div class="cert-icon">🌊</div><div class="cert-name">HJ 212</div><div class="cert-desc">环保数据传输</div></div>
+<div class="cert"><div class="cert-icon">💧</div><div class="cert-name">SL 651</div><div class="cert-desc">水文监测规约</div></div>
+<div class="cert"><div class="cert-icon">⚡</div><div class="cert-name">GB 14287</div><div class="cert-desc">电气火灾监控</div></div>
+<div class="cert"><div class="cert-icon">📋</div><div class="cert-name">ISO 9001</div><div class="cert-desc">质量管理体系</div></div>
+<div class="cert"><div class="cert-icon">📡</div><div class="cert-name">EMC</div><div class="cert-desc">电磁兼容 GB/T 17626</div></div>
 </div>
 <div class="timeline">
-<div class="tl-step"><div class="tl-dot">1</div><div class="tl-title" data-i="tl1">需求确认</div><div class="tl-desc" data-i="tl1d">场景调研 · 选型 · 报价</div></div>
-<div class="tl-step"><div class="tl-dot">2</div><div class="tl-title" data-i="tl2">硬件研发</div><div class="tl-desc" data-i="tl2d">电路设计 · 传感器选型</div></div>
-<div class="tl-step"><div class="tl-dot">3</div><div class="tl-title" data-i="tl3">SMT量产</div><div class="tl-desc" data-i="tl3d">JLCPCB标准SMT工艺</div></div>
-<div class="tl-step"><div class="tl-dot">4</div><div class="tl-title" data-i="tl4">整机测试</div><div class="tl-desc" data-i="tl4d">功能 · 老化 · EMC</div></div>
-<div class="tl-step"><div class="tl-dot">5</div><div class="tl-title" data-i="tl5">交付部署</div><div class="tl-desc" data-i="tl5d">48h发货 · 远程支持</div></div>
+<div class="tl-step"><div class="tl-num">1</div><div class="tl-title">需求确认</div><div class="tl-desc">场景调研 · 选型 · 报价</div></div>
+<div class="tl-step"><div class="tl-num">2</div><div class="tl-title">硬件研发</div><div class="tl-desc">电路设计 · 传感器选型</div></div>
+<div class="tl-step"><div class="tl-num">3</div><div class="tl-title">SMT量产</div><div class="tl-desc">JLCPCB标准SMT工艺</div></div>
+<div class="tl-step"><div class="tl-num">4</div><div class="tl-title">整机测试</div><div class="tl-desc">功能 · 老化 · EMC</div></div>
+<div class="tl-step"><div class="tl-num">5</div><div class="tl-title">交付部署</div><div class="tl-desc">48h发货 · 远程支持</div></div>
 </div>
-<div class="trust-grid" style="margin-top:40px">
-<div class="trust-col"><h4 data-i="tr1">研发与交付</h4><div class="trust-item"><div class="trust-dot blue"></div><span data-i="tr1a">深圳研发中心，核心硬件+固件+云团队</span></div><div class="trust-item"><div class="trust-dot blue"></div><span data-i="tr1b">嘉立创 JLCPCB 标准 SMT 量产产线</span></div><div class="trust-item"><div class="trust-dot blue"></div><span data-i="tr1c">样机 2 周交付，小批量 3~4 周</span></div><div class="trust-item"><div class="trust-dot blue"></div><span data-i="tr1d">支持 OEM/ODM 品牌和功能定制</span></div></div>
-<div class="trust-col"><h4 data-i="tr2">服务与质保</h4><div class="trust-item"><div class="trust-dot cyan"></div><span data-i="tr2a">主机 36 个月质保</span></div><div class="trust-item"><div class="trust-dot cyan"></div><span data-i="tr2b">工作日 9:00-18:00 在线技术支持</span></div><div class="trust-item"><div class="trust-dot cyan"></div><span data-i="tr2c">远程诊断 + OTA 升级终身免费</span></div><div class="trust-item"><div class="trust-dot cyan"></div><span data-i="tr2d">备件 48 小时发货</span></div></div>
-</div></div></section>
+<div class="delivery-grid" style="margin-top:48px">
+<div class="delivery-card"><h4>研发与交付</h4>
+<div class="delivery-item"><div class="delivery-dot" style="background:var(--steel)"></div>深圳研发中心，核心硬件+固件+云团队</div>
+<div class="delivery-item"><div class="delivery-dot" style="background:var(--steel)"></div>嘉立创 JLCPCB 标准 SMT 量产产线</div>
+<div class="delivery-item"><div class="delivery-dot" style="background:var(--steel)"></div>样机 2 周交付，小批量 3~4 周</div>
+<div class="delivery-item"><div class="delivery-dot" style="background:var(--steel)"></div>支持 OEM/ODM 品牌和功能定制</div>
+</div>
+<div class="delivery-card"><h4>服务与质保</h4>
+<div class="delivery-item"><div class="delivery-dot" style="background:var(--teal)"></div>主机 36 个月质保</div>
+<div class="delivery-item"><div class="delivery-dot" style="background:var(--teal)"></div>工作日 9:00-18:00 技术支持</div>
+<div class="delivery-item"><div class="delivery-dot" style="background:var(--teal)"></div>远程诊断 + OTA 升级终身免费</div>
+<div class="delivery-item"><div class="delivery-dot" style="background:var(--teal)"></div>备件 48 小时发货</div>
+</div>
+</div>
+</div></section>
 
+<!-- FAQ -->
 <section id="faq"><div class="sec-inner">
-<div class="sec-label">FAQ</div>
-<div class="sec-title" data-i="f0">常见问题</div>
+<div class="sec-header">
+<div class="sec-eyebrow">FAQ</div>
+<div class="sec-title">常见问题</div>
+</div>
 <div class="faq-list">
-<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q" data-i="fq1">设备需要布网线或WiFi吗？</div><div class="faq-a"><div class="faq-a-inner" data-i="fa1">不需要。全系列产品内置4G Cat.1模组，插入SIM卡即可联网，支持全国三大运营商。</div></div></div>
-<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q" data-i="fq2">数据能对接政府监管平台吗？</div><div class="faq-a"><div class="faq-a-inner" data-i="fa2">可以。内置HJ 212、SL 651、Modbus RTU等标准协议，可直接对接各级监管平台。</div></div></div>
-<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q" data-i="fq3">最小订购量是多少？</div><div class="faq-a"><div class="faq-a-inner" data-i="fa3">标准产品MOQ 5~50台不等。样机评估可单台购买。OEM定制50台起订。</div></div></div>
-<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q" data-i="fq4">安装需要专业人员吗？</div><div class="faq-a"><div class="faq-a-inner" data-i="fa4">大部分产品支持免工具安装（磁吸/壁挂/扎带），单点部署10~30分钟，普通技术人员即可完成。</div></div></div>
-<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q" data-i="fq5">是否支持OEM/ODM定制？</div><div class="faq-a"><div class="faq-a-inner" data-i="fa5">支持。统一ESP32-S3平台可快速定制不同传感器组合，50台起订，2~4周交付样机。</div></div></div>
-<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q" data-i="fq6">云平台如何部署与授权？</div><div class="faq-a"><div class="faq-a-inner" data-i="fa6">支持公有云SaaS部署（开通即用）和私有化部署（一次性授权）。具体方案根据项目规模定制，请联系销售获取详情。</div></div></div>
-<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q" data-i="fq7">如何获取报价？</div><div class="faq-a"><div class="faq-a-inner" data-i="fa7">填写页面底部的需求表单，或直接拨打 0755-2774 2413。通常1个工作日内回复方案和报价。</div></div></div>
-</div></div></section>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">设备需要布网线或WiFi吗？</div><div class="faq-a"><div class="faq-a-inner">不需要。全系列产品内置4G Cat.1模组，插入SIM卡即可联网，支持全国三大运营商。无需布线布网，单点部署10~30分钟。</div></div></div>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">数据能对接政府监管平台吗？</div><div class="faq-a"><div class="faq-a-inner">可以。内置HJ 212、SL 651、GB 14287、Modbus RTU等行业标准协议，可直接对接各级政府监管平台，无需二次开发。</div></div></div>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">最小订购量是多少？</div><div class="faq-a"><div class="faq-a-inner">标准产品MOQ 5~50台不等。样机评估可单台购买。OEM定制50台起订。</div></div></div>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">安装需要专业人员吗？</div><div class="faq-a"><div class="faq-a-inner">大部分产品支持免工具安装（磁吸/壁挂/DIN导轨/扎带），单点部署10~30分钟，普通技术人员即可完成。</div></div></div>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">是否支持OEM/ODM定制？</div><div class="faq-a"><div class="faq-a-inner">支持。统一ESP32-S3/RK3568平台可快速定制不同传感器组合和通信协议，50台起订，样机2~4周交付。</div></div></div>
+<div class="faq-item" onclick="this.classList.toggle('open')"><div class="faq-q">云平台如何部署？</div><div class="faq-a"><div class="faq-a-inner">支持公有云SaaS部署（开通即用）和私有化部署（一次性授权）。具体方案根据项目规模定制。</div></div></div>
+</div>
+</div></section>
 
+<!-- CONTACT -->
 <section class="contact-section" id="contact"><div class="sec-inner">
-<div class="sec-label">Contact</div>
 <div class="contact-grid">
 <div class="contact-info">
-<h2 data-i="ct0">获取您的专属<br><span class="gr">监测方案</span></h2>
-<p data-i="ct0d">留下您的需求信息，我们将在1个工作日内为您提供针对性方案。</p>
-<ul class="contact-checks"><li data-i="ct1">针对您行业场景的方案建议书</li><li data-i="ct2">产品选型推荐和项目报价</li><li data-i="ct3">合规对接和平台对接方案</li><li data-i="ct4">样机试用和部署规划</li></ul>
-<div class="contact-methods">
-<div class="c-method"><span class="c-label" data-i="ctPhone">电话</span><span class="c-value">0755-2774 2413</span></div>
-<div class="c-method"><span class="c-label">联系人</span><span class="c-value">贾先生 18002504814</span></div>
-<div class="c-method"><span class="c-label" data-i="ctEmail">邮箱</span><span class="c-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="67300e0b0b0e060a2706140a080815110617024904080a">[email&#160;protected]</a></span></div>
-<div class="c-method"><span class="c-label" data-i="ctAddr">地址</span><span class="c-value" data-i="ctAddrV">深圳市南山区</span></div>
-</div></div>
-<div class="lead-form" id="leadForm">
-<h3 data-i="fm0">提交项目需求</h3>
-<div class="form-sub" data-i="fm0d">带 * 为必填项，提交后 1 个工作日内回复</div>
-<input type="hidden" id="f-hp"><input type="hidden" id="f-ts"><input type="hidden" id="f-src">
-<div id="formError" style="display:none;padding:8px 12px;background:rgba(220,38,38,.06);border:1px solid rgba(220,38,38,.15);border-radius:6px;color:var(--red);font-size:12px;margin-bottom:14px"></div>
-<div class="form-2col"><div class="form-row"><label data-i="fl1">姓名 *</label><input type="text" id="f-name" required></div><div class="form-row"><label data-i="fl2">联系电话 *</label><input type="tel" id="f-phone" required></div></div>
-<div class="form-2col"><div class="form-row"><label data-i="fl3">公司/单位 *</label><input type="text" id="f-company" required></div><div class="form-row"><label data-i="fl4">邮箱</label><input type="email" id="f-email"></div></div>
-<div class="form-2col"><div class="form-row"><label data-i="fl5">您的角色</label><select id="f-role"><option value="">--</option><option>政府/监管部门</option><option>企业/运营方</option><option>系统集成商</option><option>OEM</option><option>消防维保公司</option><option>物业公司</option><option>其他</option></select></div><div class="form-row"><label data-i="fl6">所在地区</label><select id="f-region"><option value="">--</option><option>北京</option><option>上海</option><option>广东</option><option>浙江</option><option>江苏</option><option>山东</option><option>四川</option><option>湖北</option><option>湖南</option><option>河南</option><option>河北</option><option>福建</option><option>安徽</option><option>重庆</option><option>天津</option><option>陕西</option><option>辽宁</option><option>其他</option></select></div></div>
-<div class="form-2col"><div class="form-row"><label data-i="fl7">感兴趣的方向</label><select id="f-industry"><option value="">--</option><option>消防水压</option><option>特种设备</option><option>水利水务</option><option>燃气消防</option><option>污水水质</option><option>内涝/地灾</option><option>配电/机房</option><option>化工安全</option><option>农村供水</option><option>多个/不确定</option></select></div><div class="form-row"><label data-i="fl8">项目阶段</label><select id="f-stage"><option value="">--</option><option>前期调研</option><option>方案比选</option><option>已立项</option><option>紧急采购</option></select></div></div>
-<div class="form-row"><label data-i="fl9">需求描述</label><textarea id="f-desc" rows="3"></textarea></div>
-<button class="form-submit" type="button" onclick="submitForm()" data-i="fmBtn">提交需求</button>
-<div style="font-size:10.5px;color:var(--text3);line-height:1.5;margin-top:12px" data-i="fmPrivacy">提交即表示您同意我们收集以上信息用于业务沟通，我们不会向第三方披露您的个人信息。</div>
+<div class="sec-eyebrow" style="color:var(--teal-l)">Contact</div>
+<h2>获取您的专属<br><em>监测方案</em></h2>
+<p>留下您的需求信息，我们将在1个工作日内为您提供针对性方案和报价。</p>
+<ul class="contact-checks">
+<li>针对您行业场景的方案建议书</li>
+<li>产品选型推荐和项目报价</li>
+<li>合规对接和平台对接方案</li>
+<li>样机试用和部署规划</li>
+</ul>
+<div class="c-methods">
+<div class="c-method"><span class="c-label">电话</span><span class="c-val">0755-2774 2413</span></div>
+<div class="c-method"><span class="c-label">联系人</span><span class="c-val">贾先生 18002504814</span></div>
+<div class="c-method"><span class="c-label">邮箱</span><span class="c-val">contact@asm-ai.com</span></div>
+<div class="c-method"><span class="c-label">地址</span><span class="c-val">深圳市南山区</span></div>
 </div>
-<div id="formSuccess" style="display:none;text-align:center;padding:60px 20px"><div style="font-size:48px;margin-bottom:16px">✅</div><h3 data-i="fmOk">提交成功</h3><p style="color:var(--text2);margin-top:8px" data-i="fmOkD">您的需求已提交，我们将在1个工作日内与您联系。</p></div>
-</div></div></section>
+</div>
+<div class="lead-form" id="leadForm">
+<h3>提交项目需求</h3>
+<div class="form-sub">带 * 为必填项，提交后 1 个工作日内回复</div>
+<input type="hidden" id="f-hp"><input type="hidden" id="f-ts"><input type="hidden" id="f-src">
+<div id="formError" style="display:none;padding:10px 14px;background:rgba(220,38,38,.06);border:1px solid rgba(220,38,38,.12);border-radius:8px;color:var(--red);font-size:12px;margin-bottom:16px"></div>
+<div class="form-2col">
+<div class="form-row"><label>姓名 *</label><input type="text" id="f-name" required></div>
+<div class="form-row"><label>联系电话 *</label><input type="tel" id="f-phone" required></div>
+</div>
+<div class="form-2col">
+<div class="form-row"><label>公司/单位 *</label><input type="text" id="f-company" required></div>
+<div class="form-row"><label>邮箱</label><input type="email" id="f-email"></div>
+</div>
+<div class="form-2col">
+<div class="form-row"><label>您的角色</label><select id="f-role"><option value="">请选择</option><option>政府/监管部门</option><option>企业/运营方</option><option>系统集成商</option><option>OEM制造商</option><option>消防维保公司</option><option>储能代维公司</option><option>物业公司</option><option>其他</option></select></div>
+<div class="form-row"><label>感兴趣的方向</label><select id="f-industry"><option value="">请选择</option><option>AI安全监护</option><option>储能巡检</option><option>消防水压</option><option>特种设备</option><option>水利水务</option><option>燃气消防</option><option>污水水质</option><option>配电/机房</option><option>化工安全</option><option>农村供水</option><option>内涝/地灾</option><option>多个/不确定</option></select></div>
+</div>
+<div class="form-row"><label>需求描述</label><textarea id="f-desc" rows="3" placeholder="请简要描述您的项目需求、站点数量、预期时间等..."></textarea></div>
+<button class="form-submit" type="button" onclick="submitForm()">提交需求 →</button>
+<div style="font-size:10.5px;color:var(--text3);line-height:1.5;margin-top:14px">提交即表示您同意我们收集以上信息用于业务沟通，我们不会向第三方披露您的个人信息。</div>
+</div>
+<div id="formSuccess" style="display:none;text-align:center;padding:60px 20px">
+<div style="font-size:48px;margin-bottom:16px">✅</div>
+<h3 style="font-size:20px;font-weight:800">提交成功</h3>
+<p style="color:var(--text2);margin-top:8px;font-size:14px">您的需求已提交，我们将在1个工作日内与您联系。</p>
+</div>
+</div>
+</div></section>
 
+<!-- FOOTER -->
 <footer><div class="footer-inner"><div class="footer-grid">
-<div class="footer-col"><h5>ASM-AI 爱思摩科技</h5><p>深圳市爱思摩科技有限公司</p><p data-i="ftAddr">深圳市南山区</p><p class="f-highlight">0755-2774 2413</p><p class="f-highlight">贾先生 18002504814</p><p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="81d6e8edede8e0ecc1e0f2eceeeef3f7e0f1e4afe2eeec">[email&#160;protected]</a></p><p>www.asm-ai.com</p></div>
-<div class="footer-col"><h5 data-i="nav1">产品</h5><a href="products/bs1.html">BS1 <span data-i="mn10s">AI监护</span></a><a href="products/eg1.html">EG1 <span data-i="mn11s">储能巡检</span></a><a href="products/fp1.html">FP1 <span data-i="mn9s">消防水压</span></a><a href="products/se1.html">SE1 <span data-i="mn1s">特种设备</span></a><a href="products/w1.html">W1 <span data-i="mn2s">水利站</span></a><a href="products/gf1.html">GF1 <span data-i="mn3s">燃气消防</span></a><a href="products/aq1.html">AQ1 <span data-i="mn4s">污水水质</span></a><a href="products/uf1.html">UF1 <span data-i="mn5s">内涝地灾</span></a><a href="products/er1.html">ER1 <span data-i="mn6s">配电室</span></a><a href="products/cz1.html">CZ1 <span data-i="mn7s">化工安全</span></a><a href="products/rw1.html">RW1 <span data-i="mn8s">农村供水</span></a></div>
-<div class="footer-col"><h5 data-i="nav2">解决方案</h5><a href="#solutions" data-i="st8">动火作业AI监护</a><a href="#solutions" data-i="st9">储能柜远程巡检</a><a href="#solutions" data-i="st7">消防管网水压监测</a><a href="#solutions" data-i="st1">小型水库安全监测</a><a href="#solutions" data-i="st2">城市生命线监测</a><a href="#solutions" data-i="st3">配电室环境监测</a><a href="#solutions" data-i="st4">设备在线安全监测</a><a href="#solutions" data-i="st5">水污染源在线监测</a><a href="#solutions" data-i="st6">城市内涝预警</a></div>
-<div class="footer-col"><h5>Support</h5><a href="#faq" data-i="nav4">常见问题</a><a href="#contact" data-i="ftGetQuote">获取项目报价</a><a href="#contact" data-i="ftOEM">OEM/ODM 合作</a><a href="#trust" data-i="nav3">资质与认证</a></div>
-</div><div class="footer-bottom"><p>© 2026 深圳市爱思摩科技有限公司 · www.asm-ai.com</p></div></div></footer>
+<div class="footer-col"><h5>ASM-AI 爱思摩科技</h5><p>深圳市爱思摩科技有限公司</p><p>深圳市南山区</p><p class="f-highlight">0755-2774 2413</p><p class="f-highlight">贾先生 18002504814</p><p>contact@asm-ai.com</p></div>
+<div class="footer-col"><h5>产品</h5><a href="products/bs1.html">BS1 AI监护基站</a><a href="products/eg1.html">EG1 储能巡检网关</a><a href="products/fp1.html">FP1 消防水压终端</a><a href="products/se1.html">SE1 特种设备节点</a><a href="products/w1.html">W1 水利站终端</a><a href="products/gf1.html">GF1 燃气消防终端</a><a href="products/aq1.html">AQ1 污水水质终端</a><a href="products/er1.html">ER1 配电室终端</a><a href="products/cz1.html">CZ1 化工安全终端</a><a href="products/uf1.html">UF1 内涝地灾终端</a><a href="products/rw1.html">RW1 农村供水终端</a></div>
+<div class="footer-col"><h5>支持</h5><a href="#faq">常见问题</a><a href="#contact">获取报价</a><a href="#contact">OEM/ODM 合作</a><a href="#trust">资质与认证</a><a href="admin.html">管理后台</a></div>
+</div><div class="footer-bottom"><p>© 2026 深圳市爱思摩科技有限公司 · www.asm-ai.com</p><p>粤ICP备XXXXXXXX号</p></div></div></footer>
 
 <div class="float-cta"><a href="tel:18002504814" class="float-btn phone" title="贾先生 18002504814">📞</a><a href="#" class="float-btn top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">↑</a></div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-window.addEventListener('scroll',function(){document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50)});
-function showSol(i){document.querySelectorAll('.sol-tab').forEach(function(t,j){t.classList.toggle('active',j===i)});document.querySelectorAll('.sol-content').forEach(function(c,j){c.classList.toggle('active',j===i)})}
-var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}})},{threshold:.1});
-document.querySelectorAll('.anim').forEach(function(el){obs.observe(el)});
+<script>
+// Nav scroll behavior
+var nav=document.getElementById('nav');
+window.addEventListener('scroll',function(){
+  var s=window.scrollY>80;
+  nav.classList.toggle('scrolled',s);
+  nav.classList.toggle('at-top',!s);
+});
+// Form
 document.getElementById('f-ts').value=Date.now();
 document.getElementById('f-src').value=location.href;
 function submitForm(){
   var err=document.getElementById('formError');err.style.display='none';
-  if(document.getElementById('f-hp').value){err.textContent='Error';err.style.display='block';return}
-  if((Date.now()-parseInt(document.getElementById('f-ts').value))/1000<3){err.textContent=curLang==='en'?'Too fast, please wait.':'提交过快，请稍后。';err.style.display='block';return}
+  if(document.getElementById('f-hp').value)return;
+  if((Date.now()-parseInt(document.getElementById('f-ts').value))/1000<3){err.textContent='提交过快，请稍后。';err.style.display='block';return}
   var n=document.getElementById('f-name').value.trim(),p=document.getElementById('f-phone').value.trim(),c=document.getElementById('f-company').value.trim();
-  if(!n||n.length<2){err.textContent=curLang==='en'?'Please enter your name.':'请输入姓名。';err.style.display='block';return}
-  if(!/^[\d\+\-\s]{7,15}$/.test(p)){err.textContent=curLang==='en'?'Please enter a valid phone number.':'请输入正确的电话号码。';err.style.display='block';return}
-  if(!c||c.length<2){err.textContent=curLang==='en'?'Please enter company name.':'请输入公司名称。';err.style.display='block';return}
-  var em=document.getElementById('f-email').value.trim();
-  if(em&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){err.textContent=curLang==='en'?'Invalid email.':'邮箱格式不正确。';err.style.display='block';return}
-  var lead={id:'L'+Date.now(),created_at:new Date().toISOString(),name:n,phone:p,email:em,company:c,
-    role:document.getElementById('f-role').value,region:document.getElementById('f-region').value,
-    industry:document.getElementById('f-industry').value,stage:document.getElementById('f-stage').value,
-    description:document.getElementById('f-desc').value.trim(),source_page:document.getElementById('f-src').value};
+  if(!n||n.length<2){err.textContent='请输入姓名';err.style.display='block';return}
+  if(!/^[\d\+\-\s]{7,15}$/.test(p)){err.textContent='请输入正确的电话号码';err.style.display='block';return}
+  if(!c||c.length<2){err.textContent='请输入公司名称';err.style.display='block';return}
+  var lead={id:'L'+Date.now(),created_at:new Date().toISOString(),name:n,phone:p,email:document.getElementById('f-email').value.trim(),company:c,
+    role:document.getElementById('f-role').value,industry:document.getElementById('f-industry').value,
+    description:document.getElementById('f-desc').value.trim(),source_page:document.getElementById('f-src').value,status:'新线索'};
   var leads=JSON.parse(localStorage.getItem('asm_leads')||'[]');leads.unshift(lead);localStorage.setItem('asm_leads',JSON.stringify(leads));
   document.getElementById('leadForm').style.display='none';document.getElementById('formSuccess').style.display='block';
 }
-var curLang='zh';
-var EN={nav1:'Products',nav2:'Solutions',nav3:'Certifications',nav4:'FAQ',nav5:'Phone',nav6:'Get a Quote',mn1:'Special Equipment Node',mn2:'Hydrology Terminal',mn3:'Gas & Fire Terminal',mn4:'Water Quality Terminal',mn5:'Flood & Geo Terminal',mn6:'Power Room Terminal',mn7:'Chemical Safety Terminal',mn8:'Rural Water Terminal',mn11:'Energy Inspection Gateway',mn10:'AI Safety Base Station',mn9:'Fire Pressure Terminal',mn1s:'Special Equipment',mn2s:'Hydrology',mn3s:'Gas & Fire',mn4s:'Water Quality',mn5s:'Flood & Geo',mn6s:'Power Room',mn7s:'Chemical',mn8s:'Rural Water',mn11s:'Energy Gateway',mn10s:'AI Safety',mn9s:'Fire Pressure',md1:'Magnetic · Vibration · Temp',md2:'Solar · Radar level',md3:'CH4+CO · Valve linkage',md4:'6-param · HJ212',md5:'GNSS · Tilt · Crack',md6:'ΔT · Leak · Smoke',md7:'Ex-proof · LEL/TOX/PID',md8:'Chlorine · Pressure · Pump',md11:'Modbus · Dual RS485 · DIN rail',md10:'Edge AI · Absence detection',md9:'Wire-free · Battery · 4G',sn1:'Hydrology',sn2:'Gas & Fire',sn3:'Power Safety',sn4:'Special Equipment',sn5:'Wastewater',sn6:'Flood & Geo',sn9:'Energy Inspection',sn8:'AI Safety',sn7:'Fire Pressure',st1:'Small Reservoir Monitoring',st2:'Urban Lifeline Monitoring',st3:'Power Room Monitoring',st4:'Equipment Safety Monitoring',st5:'Water Pollution Monitoring',st6:'Urban Flood Warning',st9:'Energy Storage Remote Inspection',st8:'Hot Work AI Monitoring',st7:'Fire Pipe Pressure Monitoring',h1:'Covering 11 Critical Infrastructure Sectors · 4G Plug & Play',h2:'Industrial-Grade ',h3:'Smart Monitoring Terminals',h4:'Plug-and-play 4G IoT monitoring terminals for government regulators, utility operators, and system integrators.',h5:'Get Industry Solution',h6:'View All Products',hs1:'Industry Sectors',hs2:'Quick Deploy',hs2v:'15min',hs3:'SIM to Connect',hs3v:'4G LTE',hs4:'Standards',a0:'Find Your Solution',a0d:'Different roles, different needs.',a1:'Government & Regulators',a1t:'Water · Emergency · Market · Ecology',a1d:'Data direct to regulatory platforms',a2:'Utilities & Operators',a2t:'Water · Gas · Property · Chemical',a2d:'24/7 unattended monitoring',a3:'System Integrators',a3t:'Security · Environmental · Power · IT',a3d:'Standard hardware + open API',a4:'OEM Manufacturers',a4t:'Special · Electrical · Water Treatment',a4d:'MOQ 50 units, brand customization',p0:'Full Product Line',p0d:'One platform, 11 scenarios.',p10n:'AI Safety Base Station',p10v:'Hot work guardian absence AI detection with edge NPU',p10f1:'RK3568 NPU edge AI, YOLOv5n human detection',p10f2:'120° wide-angle 1080P + IR night assist',p10f3:'Tripod deploy, 10-min setup plug and play',p9n:'Fire Pressure Terminal',p9v:'Wire-free battery, 24h pipe pressure monitoring',p9f1:'Split design, SS pressure transducer',p9f2:'ER34615 battery, 2+ year life',p9f3:'15-min install, WeChat alerts',p1n:'Special Equipment Node',p1v:'Magnetic mount 10s, vibration + temp',p1f1:'85×55mm, 3-year battery',p1f2:'MEMS vibration + temp, M12',p1f3:'Ex-proof optional',p2n:'Hydrology Terminal',p2v:'Solar-powered, unattended',p2f1:'SL 651 protocol',p2f2:'Solar 20W + 15 days',p2f3:'2-hour deploy',p3n:'Gas & Fire Terminal',p3v:'Gas+fire+electrical, auto shutoff',p3f1:'CH4+CO+Smoke+Temp+Arc',p3f2:'Valve shutoff, 85dB',p3f3:'Restaurants, buildings',p4n:'Wastewater Terminal',p4v:'UV254 COD, 6-parameter',p4f1:'HJ 212 protocol',p4f2:'Auto-cleaning',p4f3:'Rural plants, outfalls',p5n:'Flood & Geo Terminal',p5v:'Level+GNSS+tilt+crack',p5f1:'GNSS RTK ±5mm',p5f2:'IP68, triple lightning',p5f3:'Bridges, slopes',p6n:'Power Room Terminal',p6v:'Temp+ΔT+current+leak',p6f1:'ΔT differential algorithm',p6f2:'RJ45+4G dual channel',p6f3:'Wall or DIN rail',p7n:'Chemical Safety Terminal',p7v:'Multi-gas monitoring',p7f1:'ExdIIC T6, SIL 2',p7f2:'LEL/TOX/PID',p7f3:'Chemical parks, tanks',p8n:'Rural Water Terminal',p8v:'Chlorine+turbidity+pH+pressure',p8f1:'GB 5749 compliance',p8f2:'Remote pump control',p8f3:'County water projects',pMore:'Learn More →',pQuote:'Get a Quote →',s0:'Industry Solutions',s0d:'Dedicated solutions per sector.',solPain:'Pain Point',solCta:'Get Solution Brief',sol8t:'Hot Work AI Safety Monitoring',sol8p:'Hot work requires full-time guardians but manual supervision fails.',sol8l1:'RK3568 NPU edge inference, YOLOv5n',sol8l2:'Guardian absence alert in 10s + WeChat push',sol8l3:'Tripod portable, 10-min setup',sol8l4:'Auto snapshot evidence and monitoring logs',sol7t:'Fire Pipe Pressure Monitoring',sol7p:'Fire water systems are invisible to manual inspection.',sol7l1:'Split design, SS pressure transducer',sol7l2:'2+ year battery, wire-free',sol7l3:'4-level smart alerting',sol7l4:'WeChat dashboard, auto logs',sol1t:'Small Reservoir Monitoring',sol1p:'98,000 small reservoirs lack monitoring.',sol1l1:'Radar level + rain + piezometer',sol1l2:'Cloud dashboard + WeChat',sol1l3:'2-hour deploy, solar powered',sol2t:'Urban Lifeline Monitoring',sol2p:'Traditional alarms lack connectivity.',sol2l1:'6-layer monitoring',sol2l2:'Auto shutoff, 85dB alarm',sol2l3:'4G real-time, batch ready',sol3t:'Power Room Monitoring',sol3p:'Contact failures cause incidents.',sol3l1:'Temp + differential temp + leak',sol3l2:'ΔT algorithm',sol3l3:'Wall/DIN, RJ45+4G',sol4t:'Special Equipment Monitoring',sol4p:'Lack continuous monitoring.',sol4l1:'SE1 compact node',sol4l2:'Magnetic mount, vibration+temp',sol4l3:'3-year battery',sol4l4:'Platform integration',sol5t:'Water Pollution Monitoring',sol5p:'Lab testing is slow and expensive.',sol5l1:'UV254 COD+NH3-N+TP+pH+DO',sol5l2:'Auto-cleaning',sol5l3:'HJ 212 direct to EPA',sol6t:'Flood & Geo Monitoring',sol6p:'No real-time warning during storms.',sol6l1:'Level+rain+GNSS+tilt',sol6l2:'Solar+triple lightning',sol6l3:'Flood command platform',c0:'Core Capabilities',c1:'Plug & Play',c1d:'4G LTE out of box. 10-30 min deploy.',c2:'Edge Intelligence',c2d:'Local FFT analysis. 90% less traffic.',c3:'Regulatory Compliance',c3d:'HJ212, SL651, GB14287, Modbus RTU.',c4:'Remote Operations',c4d:'OTA updates, WeChat monitoring.',t0:'Certifications & Delivery',t0d:'From compliance to batch delivery.',b1:'Explosion-proof GB 3836',b2:'Environmental data',b3:'Hydrological protocol',b4:'Electrical fire',b5:'Quality management',b6:'EMC GB/T 17626',tl1:'Requirements',tl1d:'Survey · Selection · Quote',tl2:'HW Design',tl2d:'Circuit · Sensor',tl3:'SMT Production',tl3d:'JLCPCB standard',tl4:'Full Testing',tl4d:'Function · Aging · EMC',tl5:'Delivery',tl5d:'48h ship · Remote support',tr1:'R&D & Delivery',tr1a:'Shenzhen R&D center',tr1b:'JLCPCB SMT production',tr1c:'Prototype 2 weeks',tr1d:'OEM/ODM customization',tr2:'Service & Warranty',tr2a:'36-month warranty',tr2b:'Weekday 9-18 support',tr2c:'Lifetime OTA updates',tr2d:'48h spare parts',f0:'FAQ',fq1:'Does it need Ethernet/WiFi?',fa1:'No. Built-in 4G Cat.1, insert SIM to connect.',fq2:'Government platform compatible?',fa2:'Yes. HJ212, SL651, Modbus RTU built-in.',fq3:'Minimum order?',fa3:'MOQ 5-50 units. Single for eval. OEM from 50.',fq4:'Professional install needed?',fa4:'No. Tool-free mount, 10-30 min deploy.',fq5:'OEM/ODM support?',fa5:'Yes. ESP32-S3 platform, MOQ 50, 2-4 weeks.',fq6:'Cloud deployment?',fa6:'SaaS or on-premise. Contact sales.',fq7:'How to get a quote?',fa7:'Fill form or call 0755-2774 2413.',ct0:'Get Your Custom\nMonitoring Solution',ct0d:'We respond within 1 business day.',ct1:'Industry solution brief',ct2:'Product selection & pricing',ct3:'Compliance integration plan',ct4:'Prototype trial & deployment',ctPhone:'Phone',ctEmail:'Email',ctAddr:'Address',ctAddrV:'Nanshan, Shenzhen',fm0:'Submit Inquiry',fm0d:'* required. 1 business day response.',fl1:'Name *',fl2:'Phone *',fl3:'Company *',fl4:'Email',fl5:'Role',fl6:'Region',fl7:'Interest',fl8:'Stage',fl9:'Description',fmPrivacy:'We will not share your info with third parties.',fmBtn:'Submit',fmOk:'Submitted!',fmOkD:'We will contact you within 1 business day.',ftAddr:'Nanshan, Shenzhen',ftGetQuote:'Get a Quote',ftOEM:'OEM/ODM'};
-function toggleLang(){curLang=curLang==='zh'?'en':'zh';document.querySelectorAll('[data-i]').forEach(function(el){var k=el.getAttribute('data-i');if(curLang==='en'){if(!el.getAttribute('data-zh'))el.setAttribute('data-zh',el.textContent);if(EN[k])el.textContent=EN[k]}else{var zh=el.getAttribute('data-zh');if(zh)el.textContent=zh}});document.querySelectorAll('.lang-btn').forEach(function(b){b.textContent=curLang==='zh'?'EN':'中文'})}
 </script>
 </body>
 </html>
