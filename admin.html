@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASM-AI 询盘管理后台</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#1a56db;--bg:#f4f7fb;--card:#fff;--text:#1a2332;--text2:#536580;--text3:#8c9bb5;--border:#e2e8f0;--green:#16a34a;--red:#dc2626;--orange:#ea580c}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'DM Sans','Noto Sans SC',sans-serif;background:var(--bg);color:var(--text)}
+.header{background:#fff;border-bottom:1px solid var(--border);padding:16px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10}
+.header h1{font-size:18px;font-weight:700;color:var(--blue)}.header .subtitle{font-size:12px;color:var(--text3)}
+.container{max-width:1400px;margin:0 auto;padding:24px 32px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:28px}
+.stat-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.stat-num{font-size:32px;font-weight:800;color:var(--blue)}.stat-label{font-size:12px;color:var(--text3);margin-top:4px}
+.toolbar{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap;align-items:center}
+.toolbar input,.toolbar select{padding:8px 14px;border:1px solid var(--border);border-radius:8px;font-size:13px;font-family:inherit;background:#fff}
+.toolbar input{width:260px}
+.toolbar select{min-width:140px}
+.btn-sm{padding:8px 16px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;border:none;transition:all .3s}
+.btn-blue{background:var(--blue);color:#fff}.btn-blue:hover{opacity:.9}
+.btn-outline-sm{background:#fff;border:1px solid var(--border);color:var(--text2)}.btn-outline-sm:hover{border-color:var(--blue);color:var(--blue)}
+.btn-red{background:var(--red);color:#fff;font-size:11px;padding:4px 10px;border-radius:5px;cursor:pointer;border:none}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.04);border:1px solid var(--border)}
+th{background:var(--bg);font-size:11px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:.5px;padding:12px 14px;text-align:left;white-space:nowrap;border-bottom:1px solid var(--border)}
+td{padding:12px 14px;font-size:13px;border-bottom:1px solid var(--border);color:var(--text2);max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+tr:hover td{background:rgba(26,86,219,.02)}
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:600}
+.badge-new{background:rgba(22,163,74,.08);color:var(--green)}.badge-follow{background:rgba(234,88,12,.08);color:var(--orange)}.badge-done{background:rgba(26,86,219,.08);color:var(--blue)}
+.empty{text-align:center;padding:60px 20px;color:var(--text3)}
+.modal-bg{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.4);z-index:100;align-items:center;justify-content:center}
+.modal-bg.open{display:flex}
+.modal{background:#fff;border-radius:16px;padding:32px;width:90%;max-width:520px;max-height:80vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.2)}
+.modal h3{font-size:18px;font-weight:700;margin-bottom:20px}.modal .row{margin-bottom:14px}.modal .label{font-size:11px;color:var(--text3);font-weight:500;margin-bottom:4px}.modal .val{font-size:14px;color:var(--text)}
+.modal textarea{width:100%;padding:10px;border:1px solid var(--border);border-radius:8px;font-size:13px;font-family:inherit;min-height:60px;margin-top:4px}
+.modal select{padding:8px 12px;border:1px solid var(--border);border-radius:8px;font-size:13px;font-family:inherit;width:100%}
+.modal-actions{display:flex;gap:10px;margin-top:20px;justify-content:flex-end}
+.login-page{display:flex;align-items:center;justify-content:center;min-height:100vh}
+.login-box{background:#fff;border-radius:16px;padding:40px;width:90%;max-width:380px;box-shadow:0 8px 32px rgba(0,0,0,.08);text-align:center}
+.login-box h2{font-size:22px;font-weight:800;color:var(--blue);margin-bottom:8px}.login-box p{font-size:13px;color:var(--text3);margin-bottom:24px}
+.login-box input{width:100%;padding:12px 16px;border:1px solid var(--border);border-radius:10px;font-size:14px;margin-bottom:16px;font-family:inherit}
+.login-box button{width:100%;padding:12px;background:linear-gradient(135deg,#1a56db,#0891b2);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer}
+@media(max-width:768px){.container{padding:16px}.toolbar input{width:100%}table{font-size:12px}th,td{padding:8px 10px}}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="loginPage" class="login-page">
+<div class="login-box">
+<h2>ASM-AI</h2>
+<p>询盘管理后台</p>
+<input type="password" id="loginPwd" placeholder="请输入管理密码" onkeydown="if(event.key==='Enter')doLogin()">
+<button onclick="doLogin()">登 录</button>
+<p id="loginErr" style="color:var(--red);font-size:12px;margin-top:12px;display:none">密码错误</p>
+</div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" style="display:none">
+<div class="header">
+<div><h1>📊 ASM-AI 询盘管理</h1><div class="subtitle">深圳市爱思摩科技有限公司</div></div>
+<div style="display:flex;gap:10px;align-items:center">
+<button class="btn-sm btn-outline-sm" onclick="exportCSV()">📥 导出CSV</button>
+<button class="btn-sm btn-outline-sm" onclick="location.href='index.html'">🌐 返回官网</button>
+<button class="btn-sm btn-outline-sm" onclick="logout()">退出</button>
+</div>
+</div>
+<div class="container">
+<div class="stats">
+<div class="stat-card"><div class="stat-num" id="s-total">0</div><div class="stat-label">总询盘数</div></div>
+<div class="stat-card"><div class="stat-num" id="s-new" style="color:var(--green)">0</div><div class="stat-label">待处理</div></div>
+<div class="stat-card"><div class="stat-num" id="s-follow" style="color:var(--orange)">0</div><div class="stat-label">跟进中</div></div>
+<div class="stat-card"><div class="stat-num" id="s-done" style="color:var(--blue)">0</div><div class="stat-label">已完成</div></div>
+</div>
+<div class="toolbar">
+<input type="text" id="searchBox" placeholder="🔍 搜索姓名、公司、电话..." oninput="renderTable()">
+<select id="filterStatus" onchange="renderTable()"><option value="">全部状态</option><option value="新线索">待处理</option><option value="跟进中">跟进中</option><option value="已成交">已完成</option></select>
+<select id="filterIndustry" onchange="renderTable()"><option value="">全部行业</option><option>消防水压</option><option>AI安全监护</option><option>储能巡检</option><option>特种设备</option><option>水利水务</option><option>燃气消防</option><option>污水水质</option><option>配电/机房</option><option>化工安全</option><option>农村供水</option></select>
+</div>
+<table>
+<thead><tr><th>时间</th><th>姓名</th><th>电话</th><th>公司</th><th>行业</th><th>阶段</th><th>状态</th><th>操作</th></tr></thead>
+<tbody id="tbody"></tbody>
+</table>
+<div id="emptyMsg" class="empty" style="display:none">暂无询盘数据</div>
+</div>
+</div>
+
+<!-- DETAIL MODAL -->
+<div class="modal-bg" id="modal">
+<div class="modal">
+<h3>📋 询盘详情</h3>
+<div id="modalBody"></div>
+<div class="row"><div class="label">状态</div><select id="m-status"><option>新线索</option><option>跟进中</option><option>已成交</option></select></div>
+<div class="row"><div class="label">跟进备注</div><textarea id="m-note" placeholder="添加跟进备注..."></textarea></div>
+<div class="modal-actions">
+<button class="btn-sm btn-outline-sm" onclick="closeModal()">关闭</button>
+<button class="btn-sm btn-blue" onclick="saveModal()">保存</button>
+</div>
+</div>
+</div>
+
+<script>
+var ADMIN_PWD='asm2026';
+var leads=[];
+var currentIdx=-1;
+
+function doLogin(){
+  var pwd=document.getElementById('loginPwd').value;
+  if(pwd===ADMIN_PWD){
+    sessionStorage.setItem('asm_auth','1');
+    document.getElementById('loginPage').style.display='none';
+    document.getElementById('dashboard').style.display='block';
+    loadLeads();
+  } else {
+    document.getElementById('loginErr').style.display='block';
+  }
+}
+function logout(){sessionStorage.removeItem('asm_auth');location.reload()}
+
+if(sessionStorage.getItem('asm_auth')==='1'){
+  document.getElementById('loginPage').style.display='none';
+  document.getElementById('dashboard').style.display='block';
+  setTimeout(loadLeads,100);
+}
+
+function loadLeads(){
+  leads=JSON.parse(localStorage.getItem('asm_leads')||'[]');
+  renderStats();
+  renderTable();
+}
+
+function renderStats(){
+  document.getElementById('s-total').textContent=leads.length;
+  document.getElementById('s-new').textContent=leads.filter(l=>!l.status||l.status==='新线索').length;
+  document.getElementById('s-follow').textContent=leads.filter(l=>l.status==='跟进中').length;
+  document.getElementById('s-done').textContent=leads.filter(l=>l.status==='已成交').length;
+}
+
+function renderTable(){
+  var q=document.getElementById('searchBox').value.toLowerCase();
+  var fs=document.getElementById('filterStatus').value;
+  var fi=document.getElementById('filterIndustry').value;
+  var filtered=leads.filter(function(l){
+    if(q&&!(l.name||'').toLowerCase().includes(q)&&!(l.company||'').toLowerCase().includes(q)&&!(l.phone||'').includes(q))return false;
+    if(fs&&(l.status||'新线索')!==fs)return false;
+    if(fi&&l.industry!==fi)return false;
+    return true;
+  });
+  var tbody=document.getElementById('tbody');
+  if(filtered.length===0){tbody.innerHTML='';document.getElementById('emptyMsg').style.display='block';return}
+  document.getElementById('emptyMsg').style.display='none';
+  tbody.innerHTML=filtered.map(function(l,i){
+    var idx=leads.indexOf(l);
+    var st=l.status||'新线索';
+    var bc=st==='新线索'?'new':st==='跟进中'?'follow':'done';
+    var t=l.created_at?new Date(l.created_at).toLocaleString('zh-CN',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}):'--';
+    return '<tr onclick="openModal('+idx+')" style="cursor:pointer"><td>'+t+'</td><td><strong>'+
+      (l.name||'--')+'</strong></td><td>'+(l.phone||'--')+'</td><td>'+(l.company||'--')+
+      '</td><td>'+(l.industry||'--')+'</td><td>'+(l.stage||'--')+
+      '</td><td><span class="badge badge-'+bc+'">'+st+'</span></td><td><button class="btn-red" onclick="event.stopPropagation();delLead('+idx+')">删除</button></td></tr>';
+  }).join('');
+}
+
+function openModal(idx){
+  currentIdx=idx;
+  var l=leads[idx];
+  var fields=[['姓名',l.name],['电话',l.phone],['公司',l.company],['邮箱',l.email],['角色',l.role],['地区',l.region],['行业',l.industry],['阶段',l.stage],['需求描述',l.description],['来源页面',l.source_page],['提交时间',l.created_at?new Date(l.created_at).toLocaleString('zh-CN'):'--']];
+  document.getElementById('modalBody').innerHTML=fields.map(function(f){return '<div class="row"><div class="label">'+f[0]+'</div><div class="val">'+(f[1]||'--')+'</div></div>'}).join('');
+  document.getElementById('m-status').value=l.status||'新线索';
+  document.getElementById('m-note').value=l.follow_note||'';
+  document.getElementById('modal').classList.add('open');
+}
+function closeModal(){document.getElementById('modal').classList.remove('open')}
+function saveModal(){
+  leads[currentIdx].status=document.getElementById('m-status').value;
+  leads[currentIdx].follow_note=document.getElementById('m-note').value;
+  localStorage.setItem('asm_leads',JSON.stringify(leads));
+  closeModal();renderStats();renderTable();
+}
+function delLead(idx){
+  if(!confirm('确定删除此询盘？'))return;
+  leads.splice(idx,1);
+  localStorage.setItem('asm_leads',JSON.stringify(leads));
+  renderStats();renderTable();
+}
+
+function exportCSV(){
+  if(!leads.length){alert('暂无数据');return}
+  var headers=['时间','姓名','电话','邮箱','公司','角色','地区','行业','阶段','需求描述','状态','跟进备注'];
+  var rows=leads.map(function(l){
+    return [l.created_at||'',l.name||'',l.phone||'',l.email||'',l.company||'',l.role||'',l.region||'',l.industry||'',l.stage||'',l.description||'',l.status||'新线索',l.follow_note||''].map(function(v){return '"'+v.replace(/"/g,'""')+'"'}).join(',');
+  });
+  var csv='\uFEFF'+headers.join(',')+'\n'+rows.join('\n');
+  var blob=new Blob([csv],{type:'text/csv;charset=utf-8'});
+  var a=document.createElement('a');a.href=URL.createObjectURL(blob);
+  a.download='ASM-AI询盘_'+new Date().toISOString().slice(0,10)+'.csv';a.click();
+}
+</script>
+</body>
+</html>
