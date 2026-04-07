@@ -19,7 +19,7 @@
 /* NAV */
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:.4s}.nav-wrap{transition:.4s}.nav.scrolled .nav-wrap{background:rgba(255,255,255,.96);backdrop-filter:blur(16px);box-shadow:var(--shadow-s)}.nav-inner{max-width:1300px;margin:0 auto;padding:0 36px;height:68px;display:flex;align-items:center;justify-content:space-between}
 .logo{display:flex;align-items:center;gap:10px}.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--blue),var(--teal));border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:11px;letter-spacing:.3px}.logo-t{font-size:18px;font-weight:800;color:var(--n900)}.nav.top .logo-t{color:#fff}.logo-s{font-size:9.5px;color:var(--n400);margin-left:3px;font-weight:500;letter-spacing:.2px}.nav.top .logo-s{color:rgba(255,255,255,.5)}
-.nav-links{display:flex;gap:24px;align-items:center}.nav-links>a{font-size:13.5px;font-weight:500;color:var(--n500);transition:.3s}.nav.top .nav-links>a{color:rgba(255,255,255,.75)}.nav-links>a:hover{color:var(--blue)}
+.nav-links{display:flex;gap:24px;align-items:center}.nav-links>a{font-size:13.5px;font-weight:500;color:var(--n500);transition:.3s}.nav.top .nav-links>a,.nav.top .mega>a{color:rgba(255,255,255,.75)}.nav-links>a:hover{color:var(--blue)}
 .nav-cta{padding:9px 22px;background:linear-gradient(135deg,var(--blue),var(--teal));color:#fff;border-radius:9px;font-weight:700;font-size:12.5px;box-shadow:0 3px 10px rgba(24,85,213,.25);white-space:nowrap}.nav-cta:hover{box-shadow:0 5px 16px rgba(24,85,213,.35);transform:translateY(-1px)}
 .nav-tel{font-size:12.5px;font-weight:600;color:var(--n400);display:none;align-items:center;gap:5px}.nav.top .nav-tel{color:rgba(255,255,255,.65)}@media(min-width:1080px){.nav-tel{display:flex}}
 .burger{display:none;flex-direction:column;gap:4.5px;cursor:pointer;padding:6px}.burger span{width:20px;height:1.8px;background:var(--n800);border-radius:1px}.nav.top .burger span{background:#fff}
@@ -50,7 +50,7 @@
 
 /* MEGA MENU */
 .mega{position:relative}
-.mega>a{cursor:pointer}
+.mega>a{cursor:pointer;font-size:13.5px;font-weight:500;color:var(--n500);transition:.3s}.mega>a:hover{color:var(--blue)}
 .mega-panel{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--n100);border-radius:16px;padding:28px 24px 20px;box-shadow:0 20px 60px rgba(11,18,32,.14);z-index:200;min-width:720px}
 .mega-panel::before{content:'';position:absolute;top:-8px;left:50%;transform:translateX(-50%);width:16px;height:8px;background:#fff;clip-path:polygon(50% 0,100% 100%,0 100%)}
 .mega:hover .mega-panel{display:block}
