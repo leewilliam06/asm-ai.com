@@ -47,7 +47,37 @@
 .btn-s{background:transparent;color:rgba(255,255,255,.6);font-size:12.5px;padding:8px 0;font-weight:500}.btn-s:hover{color:#fff}
 .hero-kpi{display:flex;gap:36px;flex-wrap:wrap}.hero-kv{color:#fff}.hero-kn{font-size:28px;font-weight:900;letter-spacing:-1px}.hero-kl{font-size:10.5px;color:rgba(255,255,255,.4);margin-top:2px;line-height:1.3}
 .hero-img{display:flex;justify-content:center}.hero-img img{max-height:400px;object-fit:contain;filter:drop-shadow(0 20px 50px rgba(0,0,0,.35))}
-.mega{position:relative}.mega-drop{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--n100);border-radius:12px;padding:16px;min-width:600px;box-shadow:var(--shadow-l);z-index:200}.mega:hover .mega-drop{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px}.mega-a{display:block;padding:8px 10px;border-radius:8px;transition:.2s}.mega-a:hover{background:var(--n50)}.mega-m{font-size:10px;color:var(--blue);font-weight:700;letter-spacing:.3px}.mega-n{font-size:12px;font-weight:600;margin-top:2px;color:var(--n900)}.mega-d{font-size:10px;color:var(--n400);margin-top:1px}@media(max-width:960px){.mega-drop{display:none!important}}
+
+/* MEGA MENU */
+.mega{position:relative}
+.mega>a{cursor:pointer}
+.mega-panel{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--n100);border-radius:16px;padding:28px 24px 20px;box-shadow:0 20px 60px rgba(11,18,32,.14);z-index:200;min-width:720px}
+.mega-panel::before{content:'';position:absolute;top:-8px;left:50%;transform:translateX(-50%);width:16px;height:8px;background:#fff;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.mega:hover .mega-panel{display:block}
+.mega-panel.sol-panel{min-width:480px}
+.mega-cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0}
+.mega-cols.cols-2{grid-template-columns:1fr 1fr}
+.mega-group{padding:0 8px}
+.mega-group-title{font-size:10px;font-weight:700;color:var(--n300);letter-spacing:1.5px;text-transform:uppercase;padding:0 10px 8px;margin-bottom:4px;border-bottom:1px solid var(--n100)}
+.mega-link{display:block;padding:8px 10px;border-radius:8px;transition:background .2s}
+.mega-link:hover{background:var(--n50)}
+.mega-link .ml-model{font-size:10px;color:var(--blue);font-weight:700;letter-spacing:.3px}
+.mega-link .ml-name{font-size:12.5px;font-weight:600;margin-top:1px;color:var(--n900)}
+.mega-link .ml-desc{font-size:10px;color:var(--n400);margin-top:1px}
+.mega-footer{display:flex;gap:16px;padding:12px 10px 0;margin-top:12px;border-top:1px solid var(--n100)}
+.mega-footer a{font-size:11.5px;color:var(--blue);font-weight:600;display:flex;align-items:center;gap:4px}
+.mega-footer a:hover{text-decoration:underline}
+.nav.top .mega-link .ml-name{color:var(--n900)}
+@media(max-width:960px){.mega-panel{display:none!important}}
+/* Mobile product accordion */
+.mob-section{padding:8px 0 4px;font-size:11px;color:var(--blue);font-weight:700;letter-spacing:1px;text-transform:uppercase;border:none}
+.mob-sub{display:none;padding-left:16px}
+.mob-sub.open{display:block}
+.mob-sub a{font-size:13px;padding:8px 0;border-bottom:1px solid var(--n50)}
+.mob-toggle{display:flex;justify-content:space-between;align-items:center;padding:13px 0;font-size:15px;font-weight:500;color:var(--n500);border-bottom:1px solid var(--n100);cursor:pointer}
+.mob-toggle::after{content:'+';font-size:18px;color:var(--n300)}
+.mob-toggle.open::after{content:'-'}
+
 @media(max-width:640px){.hero-inner{padding:120px 20px 72px}.hero-kpi{gap:24px}}
 
 /* TRUST BAR */
@@ -158,17 +188,96 @@ footer{background:var(--n900);border-top:1px solid rgba(255,255,255,.05);padding
 .fl-btn{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;border:none;cursor:pointer;transition:.3s}.fl-btn:hover{transform:scale(1.1)}
 .fl-p{background:linear-gradient(135deg,var(--blue),var(--teal));color:#fff;box-shadow:0 4px 16px rgba(24,85,213,.35)}.fl-t{background:#fff;color:var(--n400);border:1px solid var(--n100);box-shadow:var(--shadow-s)}
 
-.mega{position:relative}.mega-drop{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--n100);border-radius:12px;padding:16px;min-width:600px;box-shadow:var(--shadow-l);z-index:200}.mega:hover .mega-drop{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px}.mega-a{display:block;padding:8px 10px;border-radius:8px;transition:.2s}.mega-a:hover{background:var(--n50)}.mega-m{font-size:10px;color:var(--blue);font-weight:700;letter-spacing:.3px}.mega-n{font-size:12px;font-weight:600;margin-top:2px;color:var(--n900)}.mega-d{font-size:10px;color:var(--n400);margin-top:1px}@media(max-width:960px){.mega-drop{display:none!important}}
 @media(max-width:640px){section{padding:56px 20px}.nav-inner{padding:0 20px;height:60px}.f2{grid-template-columns:1fr}.ft-grid{grid-template-columns:1fr 1fr}.hero-inner{padding:110px 20px 64px}.p-grid{grid-template-columns:1fr}.ind-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <nav class="nav top" id="nav"><div class="nav-wrap"><div class="nav-inner">
 <a href="/" class="logo"><div class="logo-icon">ASM</div><span class="logo-t">ASM-AI</span><span class="logo-s">爱思摩科技</span></a>
-<div class="nav-links"><div class="mega"><a href="#industries" style="font-size:13.5px;font-weight:500;color:var(--n500)">行业方案 ▾</a><div class="mega-drop" style="grid-template-columns:1fr 1fr;min-width:420px"><a href="solutions/fire-pressure.html" class="mega-a"><div class="mega-m">消防水压</div><div class="mega-n">消防管网水压监测方案</div></a><a href="solutions/water-resources.html" class="mega-a"><div class="mega-m">水利水务</div><div class="mega-n">小型水库安全监测方案</div></a><a href="solutions/gas-fire.html" class="mega-a"><div class="mega-m">燃气消防</div><div class="mega-n">燃气消防一体化方案</div></a><a href="solutions/power-room.html" class="mega-a"><div class="mega-m">配电安全</div><div class="mega-n">配电室环境监测方案</div></a><a href="solutions/special-equipment.html" class="mega-a"><div class="mega-m">特种设备</div><div class="mega-n">振动温度在线监测方案</div></a><a href="solutions/wastewater.html" class="mega-a"><div class="mega-m">污水监测</div><div class="mega-n">水质在线监测方案</div></a><a href="solutions/flood-geo.html" class="mega-a"><div class="mega-m">内涝地灾</div><div class="mega-n">内涝预警与地灾监测方案</div></a><a href="solutions/chemical-safety.html" class="mega-a"><div class="mega-m">化工安全</div><div class="mega-n">可燃有毒气体监测方案</div></a></div></div><div class="mega"><a href="#products" style="font-size:13.5px;font-weight:500;color:var(--n500)">产品 ▾</a><div class="mega-drop"><a href="products/bs1.html" class="mega-a"><div class="mega-m">BS1</div><div class="mega-n">AI监护基站</div><div class="mega-d">边缘AI · 脱岗检测</div></a><a href="products/eg1.html" class="mega-a"><div class="mega-m">EG1</div><div class="mega-n">储能巡检网关</div><div class="mega-d">Modbus · 双路RS485</div></a><a href="products/fp1.html" class="mega-a"><div class="mega-m">FP1</div><div class="mega-n">消防水压终端</div><div class="mega-d">免布线 · 电池2年+</div></a><a href="products/se1.html" class="mega-a"><div class="mega-m">SE1</div><div class="mega-n">特种设备节点</div><div class="mega-d">磁吸 · 振动 · 温度</div></a><a href="products/w1.html" class="mega-a"><div class="mega-m">W1</div><div class="mega-n">水利站终端</div><div class="mega-d">太阳能 · SL 651</div></a><a href="products/gf1.html" class="mega-a"><div class="mega-m">GF1</div><div class="mega-n">燃气消防终端</div><div class="mega-d">五重防护 · 电磁阀</div></a><a href="products/aq1.html" class="mega-a"><div class="mega-m">AQ1</div><div class="mega-n">污水水质终端</div><div class="mega-d">六参数 · HJ 212</div></a><a href="products/er1.html" class="mega-a"><div class="mega-m">ER1</div><div class="mega-n">配电室终端</div><div class="mega-d">差温 · 漏水 · 双通道</div></a><a href="products/cz1.html" class="mega-a"><div class="mega-m">CZ1</div><div class="mega-n">化工安全终端</div><div class="mega-d">ExdIIC T6 · 三气室</div></a><a href="products/uf1.html" class="mega-a"><div class="mega-m">UF1</div><div class="mega-n">内涝地灾终端</div><div class="mega-d">GNSS · IP68</div></a><a href="products/rw1.html" class="mega-a"><div class="mega-m">RW1</div><div class="mega-n">农村供水终端</div><div class="mega-d">余氯 · 泵控</div></a></div></div><a href="#why">为什么选我们</a><a href="#trust">资质交付</a><a href="#faq">FAQ</a><div class="nav-tel">📞 0755-2774 2413</div><a href="#contact" class="nav-cta">获取方案报价</a></div>
+<div class="nav-links">
+<div class="mega"><a href="#industries">行业方案 ▾</a>
+<div class="mega-panel sol-panel"><div class="mega-cols cols-2">
+<div class="mega-group"><div class="mega-group-title">安全与能源</div>
+<a href="solutions/fire-pressure.html" class="mega-link"><div class="ml-model">消防水压</div><div class="ml-name">消防管网水压监测方案</div></a>
+<a href="solutions/gas-fire.html" class="mega-link"><div class="ml-model">燃气消防</div><div class="ml-name">燃气消防一体化方案</div></a>
+<a href="solutions/chemical-safety.html" class="mega-link"><div class="ml-model">化工安全</div><div class="ml-name">可燃有毒气体监测方案</div></a>
+<a href="solutions/power-room.html" class="mega-link"><div class="ml-model">配电安全</div><div class="ml-name">配电室环境监测方案</div></a>
+</div>
+<div class="mega-group"><div class="mega-group-title">水务与市政</div>
+<a href="solutions/water-resources.html" class="mega-link"><div class="ml-model">水利水务</div><div class="ml-name">小型水库安全监测方案</div></a>
+<a href="solutions/wastewater.html" class="mega-link"><div class="ml-model">污水监测</div><div class="ml-name">水质在线监测方案</div></a>
+<a href="solutions/flood-geo.html" class="mega-link"><div class="ml-model">内涝地灾</div><div class="ml-name">内涝预警与地灾监测方案</div></a>
+<a href="solutions/special-equipment.html" class="mega-link"><div class="ml-model">特种设备</div><div class="ml-name">振动温度在线监测方案</div></a>
+</div>
+</div></div></div>
+
+<div class="mega"><a href="#products">产品 ▾</a>
+<div class="mega-panel"><div class="mega-cols">
+<div class="mega-group"><div class="mega-group-title">安全与巡检</div>
+<a href="products/bs1.html" class="mega-link"><div class="ml-model">BS1</div><div class="ml-name">AI监护基站</div><div class="ml-desc">边缘AI · 脱岗检测 · 声光报警</div></a>
+<a href="products/eg1.html" class="mega-link"><div class="ml-model">EG1</div><div class="ml-name">储能远程巡检网关</div><div class="ml-desc">Modbus · 双路RS485 · DIN导轨</div></a>
+<a href="products/se1.html" class="mega-link"><div class="ml-model">SE1</div><div class="ml-name">特种设备监控节点</div><div class="ml-desc">磁吸安装 · 振动 · 温度 · 防爆</div></a>
+<a href="products/cz1.html" class="mega-link"><div class="ml-model">CZ1</div><div class="ml-name">化工安全终端</div><div class="ml-desc">ExdIIC T6 · LEL/TOX/PID</div></a>
+</div>
+<div class="mega-group"><div class="mega-group-title">水务与环境</div>
+<a href="products/w1.html" class="mega-link"><div class="ml-model">W1</div><div class="ml-name">水利站监测终端</div><div class="ml-desc">太阳能 · SL 651 · 全要素</div></a>
+<a href="products/aq1.html" class="mega-link"><div class="ml-model">AQ1</div><div class="ml-name">污水水质终端</div><div class="ml-desc">UV254 · 六参数 · HJ 212</div></a>
+<a href="products/rw1.html" class="mega-link"><div class="ml-model">RW1</div><div class="ml-name">农村供水终端</div><div class="ml-desc">余氯 · 压力 · 泵控</div></a>
+<a href="products/uf1.html" class="mega-link"><div class="ml-model">UF1</div><div class="ml-name">内涝地灾终端</div><div class="ml-desc">GNSS RTK · 倾斜 · IP68</div></a>
+</div>
+<div class="mega-group"><div class="mega-group-title">城市基础设施</div>
+<a href="products/fp1.html" class="mega-link"><div class="ml-model">FP1</div><div class="ml-name">消防水压终端</div><div class="ml-desc">免布线 · 电池2年+ · IP67</div></a>
+<a href="products/gf1.html" class="mega-link"><div class="ml-model">GF1</div><div class="ml-name">燃气消防终端</div><div class="ml-desc">五重防护 · 电磁阀联动</div></a>
+<a href="products/er1.html" class="mega-link"><div class="ml-model">ER1</div><div class="ml-name">配电室终端</div><div class="ml-desc">ΔT差温 · 漏水 · 双通道</div></a>
+</div>
+</div>
+<div class="mega-footer">
+<a href="#products">📋 查看全部产品</a>
+<a href="#contact">📄 下载产品目录</a>
+<a href="#contact">👤 联系销售工程师</a>
+</div>
+</div></div>
+
+<a href="#why">为什么选我们</a>
+<a href="#trust">资质交付</a>
+<a href="#faq">FAQ</a>
+<div class="nav-tel">📞 0755-2774 2413</div>
+<a href="#contact" class="nav-cta">获取方案报价</a>
+</div>
 <div class="burger" onclick="document.getElementById('mm').classList.toggle('open')"><span></span><span></span><span></span></div>
 </div></div></nav>
-<div class="mob-menu" id="mm"><a href="#industries" onclick="this.parentElement.classList.remove('open')">行业方案</a><a href="#products" onclick="this.parentElement.classList.remove('open')">产品</a><a href="#why" onclick="this.parentElement.classList.remove('open')">为什么选我们</a><a href="#trust" onclick="this.parentElement.classList.remove('open')">资质交付</a><a href="#faq" onclick="this.parentElement.classList.remove('open')">FAQ</a><a href="#contact" onclick="this.parentElement.classList.remove('open')">获取方案</a><div style="padding:14px 0;color:var(--blue);font-weight:700;font-size:15px">0755-2774 2413<br><span style="font-size:13px;color:var(--n400)">贾先生 18002504814</span></div></div>
+<div class="mob-menu" id="mm">
+<div class="mob-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">行业方案</div>
+<div class="mob-sub">
+<a href="solutions/fire-pressure.html">消防管网水压监测方案</a>
+<a href="solutions/water-resources.html">小型水库安全监测方案</a>
+<a href="solutions/gas-fire.html">燃气消防一体化方案</a>
+<a href="solutions/power-room.html">配电室环境监测方案</a>
+<a href="solutions/special-equipment.html">特种设备在线监测方案</a>
+<a href="solutions/wastewater.html">水质在线监测方案</a>
+<a href="solutions/flood-geo.html">内涝预警与地灾方案</a>
+<a href="solutions/chemical-safety.html">化工气体监测方案</a>
+</div>
+<div class="mob-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">产品</div>
+<div class="mob-sub">
+<a href="products/bs1.html">BS1 AI监护基站</a>
+<a href="products/eg1.html">EG1 储能巡检网关</a>
+<a href="products/fp1.html">FP1 消防水压终端</a>
+<a href="products/se1.html">SE1 特种设备节点</a>
+<a href="products/w1.html">W1 水利站终端</a>
+<a href="products/gf1.html">GF1 燃气消防终端</a>
+<a href="products/aq1.html">AQ1 污水水质终端</a>
+<a href="products/er1.html">ER1 配电室终端</a>
+<a href="products/cz1.html">CZ1 化工安全终端</a>
+<a href="products/uf1.html">UF1 内涝地灾终端</a>
+<a href="products/rw1.html">RW1 农村供水终端</a>
+</div>
+<a href="#why" onclick="this.parentElement.classList.remove('open')">为什么选我们</a>
+<a href="#trust" onclick="this.parentElement.classList.remove('open')">资质交付</a>
+<a href="#faq" onclick="this.parentElement.classList.remove('open')">FAQ</a>
+<a href="#contact" onclick="this.parentElement.classList.remove('open')">获取方案</a>
+<div style="padding:14px 0;color:var(--blue);font-weight:700;font-size:15px">0755-2774 2413<br><span style="font-size:13px;color:var(--n400)">贾先生 18002504814</span></div>
+</div></div>
 
 <section class="hero"><div class="hero-grid"></div><div class="hero-glow"></div><div class="hero-glow2"></div>
 <div class="hero-inner"><div>
