@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SE1 特种设备智能监控节点 - ASM-AI 爱思摩科技</title>
+<meta name="description" content="ASM-AI SE1 特种设备智能监控节点，名片大小磁吸安装，10秒上机，振动+温度实时在线监测">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffffff;--bg2:#f4f7fb;--text:#1a2332;--text2:#536580;--text3:#8c9bb5;--blue:#1a56db;--blue-d:#0f3a94;--cyan:#0891b2;--accent-g:linear-gradient(135deg,#1a56db,#0891b2);--red:#dc2626;--green:#16a34a;--border:#e2e8f0;--shadow:0 1px 3px rgba(0,0,0,.06);--shadow-md:0 4px 16px rgba(0,0,0,.08);--font:'DM Sans','Noto Sans SC',sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}img{max-width:100%;display:block}a{color:inherit;text-decoration:none}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:box-shadow .3s}.nav.scrolled{box-shadow:var(--shadow-md)}.nav-inner{max-width:1280px;margin:0 auto;padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between}.logo{display:flex;align-items:center;gap:10px}.logo-mark{width:34px;height:34px;background:var(--accent-g);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:11px}.logo-text{font-size:18px;font-weight:800;color:var(--blue-d)}.logo-sub{font-size:10px;color:var(--text3);margin-left:4px}
+.nav-links{display:flex;gap:20px;align-items:center}.nav-links>a{color:var(--text2);font-size:13.5px;font-weight:500}.nav-links>a:hover{color:var(--blue)}.nav-cta{padding:8px 20px;background:var(--accent-g);color:#fff;border-radius:8px;font-weight:700;font-size:12.5px;box-shadow:0 2px 8px rgba(26,86,219,.25)}.nav-cta:hover{opacity:.88}
+.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:8px}.hamburger span{display:block;width:20px;height:2px;background:var(--text)}
+@media(max-width:900px){.nav-links{display:none}.hamburger{display:flex}}
+.hero-product{padding:100px 32px 60px;background:linear-gradient(180deg,var(--bg2),#fff)}.hero-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:40px;align-items:center}@media(min-width:768px){.hero-inner{grid-template-columns:1fr 1fr}}
+.breadcrumb{font-size:12px;color:var(--text3);margin-bottom:20px}.breadcrumb a{color:var(--blue);font-weight:500}
+.hero-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}.htag{font-size:10px;padding:4px 10px;border-radius:5px;font-weight:700}.htag-m{background:rgba(26,86,219,.08);color:var(--blue);border:1px solid rgba(26,86,219,.12)}.htag-ip{background:rgba(8,145,178,.06);color:var(--cyan);border:1px solid rgba(8,145,178,.12)}.htag-ex{background:rgba(220,38,38,.06);color:var(--red);border:1px solid rgba(220,38,38,.1)}.htag-new{background:rgba(22,163,74,.08);color:var(--green);border:1px solid rgba(22,163,74,.12)}
+.hero-product h1{font-size:clamp(28px,3.5vw,42px);font-weight:800;letter-spacing:-1px;margin-bottom:12px;line-height:1.2}
+.hero-product .subtitle{font-size:16px;color:var(--text2);margin-bottom:24px;line-height:1.7;max-width:480px}
+.hero-features{display:flex;flex-direction:column;gap:8px;margin-bottom:28px}.hf{font-size:13.5px;color:var(--text2)}.hf::before{content:'✓ ';color:var(--blue);font-weight:700}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:12px 26px;border-radius:10px;font-weight:700;font-size:13.5px;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:6px;transition:all .3s}.btn-primary{background:var(--accent-g);color:#fff;box-shadow:0 4px 14px rgba(26,86,219,.3)}.btn-primary:hover{opacity:.9;transform:translateY(-1px)}.btn-outline{background:#fff;border:1.5px solid var(--border);color:var(--text)}.btn-outline:hover{border-color:var(--blue);color:var(--blue)}
+.hero-img{display:flex;align-items:center;justify-content:center}.hero-img img{max-height:380px;object-fit:contain;filter:drop-shadow(0 16px 40px rgba(0,0,0,.12))}
+section{padding:72px 32px}.sec-inner{max-width:1280px;margin:0 auto}.sec-title{font-size:clamp(22px,2.5vw,30px);font-weight:800;margin-bottom:28px;letter-spacing:-.5px}.bg-alt{background:var(--bg2)}
+.spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.spec-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:24px;box-shadow:var(--shadow)}.spec-card h4{font-size:14px;font-weight:700;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);color:var(--blue)}
+.spec-row{display:flex;justify-content:space-between;padding:6px 0;font-size:12.5px;border-bottom:1px solid rgba(0,0,0,.03)}.spec-label{color:var(--text3);font-weight:500}.spec-val{color:var(--text);font-weight:600;text-align:right;max-width:55%}
+.scene-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.scene-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:24px;box-shadow:var(--shadow)}.scene-card h4{font-size:14px;font-weight:700;margin-bottom:8px}.scene-card p{font-size:12.5px;color:var(--text2);line-height:1.6}
+.scene-icon{font-size:28px;margin-bottom:12px}
+.cta-bar{background:var(--bg2);border-radius:16px;padding:40px;text-align:center;margin-top:40px}.cta-bar h3{font-size:22px;font-weight:800;margin-bottom:8px}.cta-bar p{font-size:14px;color:var(--text2);margin-bottom:20px}.cta-bar .methods{font-size:13px;color:var(--text3);margin-top:16px}
+footer{border-top:1px solid var(--border);padding:32px;background:var(--bg2);text-align:center}.footer-inner{font-size:11px;color:var(--text3)}
+@media(max-width:640px){section{padding:48px 20px}.hero-product{padding:90px 20px 48px}.spec-grid{grid-template-columns:1fr}.scene-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav"><div class="nav-inner">
+<a href="../index.html" class="logo"><div class="logo-mark">ASM</div><span class="logo-text">ASM-AI</span><span class="logo-sub">爱思摩科技</span></a>
+<div class="nav-links">
+<a href="../index.html#products">产品</a>
+<a href="../index.html#solutions">解决方案</a>
+<a href="../index.html#trust">资质交付</a>
+<a href="../index.html#faq">常见问题</a>
+<a href="../index.html#contact" class="nav-cta">获取方案</a>
+</div>
+<div class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')"><span></span><span></span><span></span></div>
+<div class="mobile-menu" style="display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:#fff;padding:20px 24px;z-index:999">
+<a href="../index.html#products" style="display:block;padding:12px 0;border-bottom:1px solid #e2e8f0">全部产品</a>
+<a href="../index.html#solutions" style="display:block;padding:12px 0;border-bottom:1px solid #e2e8f0">解决方案</a>
+<a href="../index.html#contact" style="display:block;padding:12px 0;border-bottom:1px solid #e2e8f0">获取方案</a>
+<div style="padding:14px 0;color:#1a56db;font-weight:700">0755-2774 2413</div>
+</div>
+</div></nav>
+
+<section class="hero-product"><div class="hero-inner">
+<div>
+<div class="breadcrumb"><a href="../index.html">首页</a> / <a href="../index.html#products">产品</a> / SE1</div>
+<div class="hero-tags"><span class="htag htag-m">SE1</span><span class="htag htag-ip">IP67</span><span class="htag htag-ex">ExdIIC T6</span></div>
+<h1>特种设备智能监控节点</h1>
+<p class="subtitle">名片大小磁吸安装，10秒上机，振动+温度实时在线监测</p>
+<div class="hero-features"><div class="hf">名片大小 85×55mm，超紧凑设计</div><div class="hf">磁吸安装10秒上机，免工具</div><div class="hf">内置MEMS三轴振动+温度传感器</div><div class="hf">电池续航3年，覆盖完整检验周期</div><div class="hf">M12航插外接传感器扩展</div><div class="hf">防爆版ExdIIC T6可选</div></div>
+<div class="hero-btns">
+<a href="../index.html#contact" class="btn btn-primary">获取报价</a>
+<a href="../index.html#contact" class="btn btn-outline">申请样机试用</a>
+</div>
+</div>
+<div class="hero-img"><img src="../images/SE1.png" alt="SE1 特种设备智能监控节点"></div>
+</div></section>
+
+<section class="bg-alt"><div class="sec-inner">
+<div class="sec-title">技术规格</div>
+<div class="spec-grid"><div class="spec-card"><h4>基本参数 / Basic</h4><div class="spec-row"><span class="spec-label">产品型号</span><span class="spec-val">SE1</span></div><div class="spec-row"><span class="spec-label">外形尺寸</span><span class="spec-val">85×55×28mm</span></div><div class="spec-row"><span class="spec-label">重量</span><span class="spec-val">≤120g</span></div><div class="spec-row"><span class="spec-label">安装方式</span><span class="spec-val">磁吸 / 扎带 / 螺栓</span></div><div class="spec-row"><span class="spec-label">工作温度</span><span class="spec-val">-40℃ ~ +85℃</span></div><div class="spec-row"><span class="spec-label">防护等级</span><span class="spec-val">IP67</span></div><div class="spec-row"><span class="spec-label">防爆认证</span><span class="spec-val">ExdIIC T6（可选）</span></div></div><div class="spec-card"><h4>传感器 / Sensor</h4><div class="spec-row"><span class="spec-label">振动传感器</span><span class="spec-val">MEMS三轴加速度计</span></div><div class="spec-row"><span class="spec-label">振动量程</span><span class="spec-val">±16g</span></div><div class="spec-row"><span class="spec-label">振动频响</span><span class="spec-val">10Hz ~ 5kHz</span></div><div class="spec-row"><span class="spec-label">温度传感器</span><span class="spec-val">NTC / PT100</span></div><div class="spec-row"><span class="spec-label">温度范围</span><span class="spec-val">-40℃ ~ +125℃</span></div><div class="spec-row"><span class="spec-label">温度精度</span><span class="spec-val">±0.5℃</span></div><div class="spec-row"><span class="spec-label">外接传感器</span><span class="spec-val">M12航插，支持4-20mA</span></div></div><div class="spec-card"><h4>通信 / Communication</h4><div class="spec-row"><span class="spec-label">通信方式</span><span class="spec-val">4G Cat.1</span></div><div class="spec-row"><span class="spec-label">天线</span><span class="spec-val">内置PCB天线</span></div><div class="spec-row"><span class="spec-label">协议</span><span class="spec-val">MQTT</span></div><div class="spec-row"><span class="spec-label">上报周期</span><span class="spec-val">可配置 1min~60min</span></div><div class="spec-row"><span class="spec-label">边缘计算</span><span class="spec-val">本地FFT频谱分析</span></div></div><div class="spec-card"><h4>电源 / Power</h4><div class="spec-row"><span class="spec-label">电池类型</span><span class="spec-val">锂亚硫酰氯</span></div><div class="spec-row"><span class="spec-label">电压</span><span class="spec-val">3.6V</span></div><div class="spec-row"><span class="spec-label">续航</span><span class="spec-val">3年（15min周期）</span></div><div class="spec-row"><span class="spec-label">低电量告警</span><span class="spec-val">支持</span></div></div></div>
+</div></section>
+
+<section><div class="sec-inner">
+<div class="sec-title">应用场景</div>
+<div class="scene-grid"><div class="scene-card"><div class="scene-icon">🏗</div><h4>起重机在线监测</h4><p>磁吸安装在关键轴承、减速箱位置，实时监测振动频谱变化，预警机械故障。</p></div><div class="scene-card"><div class="scene-icon">🛗</div><h4>电梯运行监测</h4><p>安装在曳引机上，监测振动和温度，支持特检院数据平台对接。</p></div><div class="scene-card"><div class="scene-icon">⚙</div><h4>工业电机监测</h4><p>大型电机轴承振动和温度在线监测，替代人工定期巡检。</p></div><div class="scene-card"><div class="scene-icon">🔧</div><h4>压力容器监测</h4><p>防爆版安装在压力容器关键位置，连续监测运行状态。</p></div></div>
+
+<div class="cta-bar">
+<h3>对 SE1 感兴趣？</h3>
+<p>联系我们获取详细技术方案和项目报价</p>
+<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+<a href="../index.html#contact" class="btn btn-primary">获取方案报价</a>
+<a href="tel:18002504814" class="btn btn-outline">📞 贾先生 18002504814</a>
+</div>
+<div class="methods">公司电话 0755-2774 2413 · 邮箱 William@asmoorvape.com</div>
+</div>
+</div></section>
+
+<footer><div class="footer-inner">© 2026 深圳市爱思摩科技有限公司 · <a href="https://www.asm-ai.com" style="color:#1a56db">www.asm-ai.com</a></div></footer>
+
+<script>
+window.addEventListener('scroll',function(){document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50)});
+document.querySelector('.hamburger').addEventListener('click',function(){var m=this.nextElementSibling;m.style.display=m.style.display==='block'?'none':'block'});
+</script>
+</body>
+</html>
